@@ -3,99 +3,159 @@
   color:#0b3c6f;
 }
 
-/* Page */
 body{
   margin:0;
+  background:#ffffff;
   color:#0b3c6f;
 }
 
-/* Main container */
 .wrap{
   max-width:1200px;
   margin:0 auto;
   padding:20px 40px 32px;
+  box-sizing:border-box;
 }
 
-/* Step boxes */
-.step-box{
+.tracker-box,
+.password-box{
   border:1px solid #0b3c6f;
   border-radius:10px;
-  padding:28px;
-  margin:26px 0;
-  background:#f5f5f5;
-  text-align:center;
+  padding:18px;
+  margin:0 0 22px;
+  background:#ffffff;
+  box-sizing:border-box;
 }
 
-/* Step titles */
-.step-box h2{
-  margin:0 0 12px;
-  font-size:2rem;
-  color:red;
-}
-
-/* Step description text */
+.tracker-text,
 .step-text{
-  margin:0 0 18px;
-  font-size:1.1rem;
+  margin:0 0 14px;
+  font-size:1.05rem;
   font-weight:500;
+  text-align:center;
+  line-height:1.5;
+  color:#0b3c6f;
 }
 
-/* Row containing input and button */
-.step-row{
+.step-title{
+  display:block;
+  margin:0 0 8px;
+  font-size:1.45rem;
+  font-weight:700;
+  color:#0b3c6f;
+}
+
+.tracker-row,
+.password-row{
   display:flex;
+  gap:10px;
   justify-content:center;
   align-items:center;
-  gap:12px;
   flex-wrap:wrap;
 }
 
-/* Input fields */
-.step-input{
+.tracker-input,
+.password-row input{
   width:230px;
   padding:12px;
   border:1px solid #0b3c6f;
   border-radius:8px;
   font-size:1rem;
   color:#0b3c6f;
-  background:#fff;
+  background:#ffffff;
   box-sizing:border-box;
 }
 
-/* Buttons */
-.step-button{
-  padding:12px 18px;
-  background:#214679;
-  color:#fff;
-  border:none;
-  border-radius:8px;
-  font-size:1rem;
-  cursor:pointer;
-  white-space:nowrap;
+.tracker-input::placeholder,
+.password-row input::placeholder{
+  color:#6b7a90;
 }
 
-.step-button:hover{
+.tracker-btn,
+.password-row button{
+  padding:12px 18px;
+  border:none;
+  border-radius:8px;
+  background:#214679;
+  color:#ffffff;
+  font-size:1rem;
+  font-weight:600;
+  cursor:pointer;
+  box-sizing:border-box;
+  transition:background 0.2s ease;
+}
+
+.tracker-btn:hover,
+.password-row button:hover{
   background:#16345c;
 }
 
-/* Mobile responsiveness */
-@media (max-width:600px){
+.tracker-btn:disabled,
+.password-row button:disabled{
+  opacity:0.7;
+  cursor:not-allowed;
+}
 
+.tracker-message,
+#errorMessage{
+  margin:14px 0 0;
+  min-height:1.4em;
+  font-size:0.98rem;
+  font-weight:600;
+  text-align:center;
+  color:#0b3c6f;
+}
+
+.video-thumb{
+  display:block;
+  max-width:900px;
+  margin:0 auto 22px;
+  border-radius:10px;
+  overflow:hidden;
+  text-decoration:none;
+}
+
+.video-thumb img{
+  display:block;
+  width:100%;
+  height:auto;
+  border:1px solid #0b3c6f;
+  border-radius:10px;
+  box-sizing:border-box;
+}
+
+a{
+  color:#c62828;
+}
+
+a:hover{
+  text-decoration:underline;
+}
+
+@media (max-width:768px){
   .wrap{
-    padding:16px;
+    padding:16px 18px 24px;
   }
 
-  .step-row{
+  .tracker-row,
+  .password-row{
     flex-direction:column;
+    align-items:stretch;
   }
 
-  .step-input{
+  .tracker-input,
+  .password-row input,
+  .tracker-btn,
+  .password-row button{
     width:100%;
-    max-width:320px;
+    max-width:100%;
   }
 
-  .step-button{
-    width:100%;
-    max-width:320px;
+  .step-title{
+    font-size:1.25rem;
   }
 
+  .tracker-text,
+  .step-text{
+    font-size:1rem;
+  }
 }
