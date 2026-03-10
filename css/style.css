@@ -5,135 +5,170 @@
 
 body{
   margin:0;
-  background:#ffffff;
   color:#0b3c6f;
 }
 
 .wrap{
   max-width:1200px;
   margin:0 auto;
-  padding:20px 40px 32px;
-  box-sizing:border-box;
+  padding:0 40px;
+  display:flex;
+  flex-direction:column;
+  gap:24px;
 }
 
-.tracker-box,
-.password-box{
+.tracker-box{
   border:1px solid #0b3c6f;
   border-radius:10px;
   padding:18px;
-  margin:0 0 22px;
-  background:#ffffff;
-  box-sizing:border-box;
+  background:#fff;
 }
 
-.tracker-text,
-.step-text{
-  margin:0 0 14px;
+.tracker-text{
+  margin:0;
   font-size:1.05rem;
   font-weight:500;
   text-align:center;
-  line-height:1.5;
-  color:#0b3c6f;
 }
 
 .step-title{
   display:block;
-  margin:0 0 8px;
-  font-size:1.45rem;
-  font-weight:700;
-  color:#0b3c6f;
+  font-size:32px;
+  color:red;
+  text-align:center;
+  margin-bottom:6px;
 }
 
-.tracker-row,
-.password-row{
+.video-thumb{
+  position:relative;
+  max-width:900px;
+  margin:0 auto;
+  display:block;
+}
+
+.video-thumb img{
+  width:100%;
+  border:1px solid #0b3c6f;
+  border-radius:8px;
+  display:block;
+}
+
+.video-thumb::before{
+  content:'';
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-40%, -50%);
+  border-style:solid;
+  border-width:14px 0 14px 22px;
+  border-color:transparent transparent transparent white;
+  z-index:3;
+  opacity:0.9;
+  transition:transform 0.2s ease;
+}
+
+.video-thumb:hover::before{
+  transform:translate(-40%, -50%) scale(1.2);
+}
+
+.tracker-row{
   display:flex;
   gap:10px;
   justify-content:center;
-  align-items:center;
-  flex-wrap:wrap;
+  align-items:end;
 }
 
-.tracker-input,
-.password-row input{
-  width:230px;
+.tracker-input{
+  width:200px;
   padding:12px;
   border:1px solid #0b3c6f;
   border-radius:8px;
   font-size:1rem;
   color:#0b3c6f;
-  background:#ffffff;
+  background:#fff;
   box-sizing:border-box;
 }
 
-.tracker-input::placeholder,
-.password-row input::placeholder{
-  color:#6b7a90;
-}
-
-.tracker-btn,
-.password-row button{
-  padding:12px 18px;
-  border:none;
+.tracker-btn{
+  padding:12px 16px;
+  border:1px solid #0b3c6f;
   border-radius:8px;
-  background:#214679;
-  color:#ffffff;
+  background:#0b3c6f;
+  color:#fff;
   font-size:1rem;
-  font-weight:600;
   cursor:pointer;
-  box-sizing:border-box;
-  transition:background 0.2s ease;
 }
 
-.tracker-btn:hover,
-.password-row button:hover{
-  background:#16345c;
+.tracker-btn:hover{
+  background:#08508f;
 }
 
-.tracker-btn:disabled,
-.password-row button:disabled{
-  opacity:0.7;
-  cursor:not-allowed;
-}
-
-.tracker-message,
-#errorMessage{
-  margin:14px 0 0;
-  min-height:1.4em;
-  font-size:0.98rem;
-  font-weight:600;
+.tracker-message{
+  margin-top:8px;
+  font-weight:700;
+  min-height:24px;
   text-align:center;
-  color:#0b3c6f;
 }
 
-.video-thumb{
-  display:block;
-  max-width:900px;
-  margin:0 auto 22px;
-  border-radius:10px;
-  overflow:hidden;
-  text-decoration:none;
-}
-
-.video-thumb img{
-  display:block;
-  width:100%;
-  height:auto;
+.password-box{
   border:1px solid #0b3c6f;
   border-radius:10px;
+  padding:18px;
+  background:#fff;
+}
+
+.step-text{
+  margin:0 0 14px;
+  font-size:1.05rem;
+  font-weight:500;
+  text-align:center;
+}
+
+.password-row{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  align-items:end;
+}
+
+#passwordBox{
+  width:220px;
+  padding:12px;
+  border:1px solid #0b3c6f;
+  border-radius:8px;
+  font-size:1rem;
+  color:#0b3c6f;
+  background:#fff;
   box-sizing:border-box;
+  -webkit-text-security:disc;
 }
 
-a{
-  color:#c62828;
+#submitButton{
+  padding:12px 16px;
+  border:1px solid #0b3c6f;
+  border-radius:8px;
+  background:#0b3c6f;
+  color:#fff;
+  font-size:1rem;
+  cursor:pointer;
+  flex-shrink:0;
 }
 
-a:hover{
-  text-decoration:underline;
+#submitButton:hover{
+  background:#08508f;
 }
 
-@media (max-width:768px){
+#errorMessage{
+  margin-top:8px;
+  font-weight:700;
+  min-height:24px;
+  color:#b3261e;
+  text-align:center;
+}
+
+@media (max-width:600px){
   .wrap{
-    padding:16px 18px 24px;
+    padding:0 16px;
   }
 
   .tracker-row,
@@ -143,19 +178,13 @@ a:hover{
   }
 
   .tracker-input,
-  .password-row input,
   .tracker-btn,
-  .password-row button{
+  #passwordBox,
+  #submitButton{
     width:100%;
-    max-width:100%;
   }
 
   .step-title{
-    font-size:1.25rem;
-  }
-
-  .tracker-text,
-  .step-text{
-    font-size:1rem;
+    font-size:26px;
   }
 }
