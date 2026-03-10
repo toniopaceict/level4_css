@@ -191,16 +191,3 @@ legend{
 }
 
 
-
-ul.tasklist,
-ol.tasklist {
-  margin: 10px 0 16px 26px;
-  color: #0b3c6f;
-  font-size: 1.05rem;
-  line-height: 1.6;
-}
-
-ul.tasklist li,
-ol.tasklist li {
-  margin-bottom: 10px;
-}
