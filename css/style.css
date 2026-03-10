@@ -76,3 +76,44 @@ body{
 .video-thumb:hover::before{
   transform:translate(-40%, -50%) scale(1.2);
 }
+
+.tracker-row{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  align-items:end;
+}
+
+.tracker-input{
+  width:200px;
+  padding:12px;
+  border:1px solid #0b3c6f;
+  border-radius:8px;
+  font-size:1rem;
+  color:#0b3c6f;
+  background:#fff;
+  box-sizing:border-box;
+}
+
+.tracker-btn{
+  padding:12px 16px;
+  border:1px solid #0b3c6f;
+  border-radius:8px;
+  background:#0b3c6f;
+  color:#fff;
+  font-size:1rem;
+  cursor:pointer;
+}
+
+.tracker-btn:hover{
+  background:#08508f;
+}
+
+.tracker-message{
+  margin-top:8px;
+  font-weight:700;
+  min-height:24px;
+  text-align:center;
+}
+
+
