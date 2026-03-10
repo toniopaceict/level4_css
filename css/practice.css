@@ -158,8 +158,9 @@ legend{
 }
 
 .tasklist{
-  margin:0;
-  padding-left:24px;
+  list-style-type:lower-roman;
+  margin:8px 0 0 28px;
+  padding-left:10px;
   line-height:1.7;
 }
 
