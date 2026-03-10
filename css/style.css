@@ -73,11 +73,13 @@ body{
   transform:translate(-40%, -50%) scale(1.2);
 }
 
-.tracker-row{
+.tracker-row,
+.password-row{
   display:flex;
   gap:10px;
   justify-content:center;
   align-items:end;
+  margin-top:10px;
 }
 
 .tracker-input{
@@ -112,12 +114,7 @@ body{
   text-align:center;
 }
 
-.password-row{
-  display:flex;
-  gap:10px;
-  justify-content:center;
-  align-items:end;
-}
+
 
 #passwordBox{
   width:220px;
