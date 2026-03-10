@@ -40,9 +40,16 @@ body{
 }
 
 
+.video-wrap{
+  width:100%;
+  display:flex;
+  justify-content:center;
+}
+
 .video-container{
   position:relative;
   width:100%;
+  max-width:900px;
   padding-bottom:56.25%;
   height:0;
 }
