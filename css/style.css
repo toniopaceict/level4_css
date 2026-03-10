@@ -1,0 +1,22 @@
+:root{
+  font-family:system-ui, Segoe UI, Roboto, Arial, sans-serif;
+  color:#0b3c6f;
+}
+
+body{
+  margin:0;
+  color:#0b3c6f;
+}
+
+.wrap{
+  max-width:1200px;
+  margin:0 auto;
+  padding:20px 40px 32px;
+}
+
+.tracker-box{
+  border:1px solid #0b3c6f;
+  border-radius:10px;
+  padding:18px;
+  background:#fff;
+}
