@@ -11,7 +11,7 @@ body{
 .wrap{
   max-width:1200px;
   margin:0 auto;
-  padding:20px 40px 32px;
+  padding:0px 40px 0px;
 }
 
 .tracker-box{
@@ -19,4 +19,19 @@ body{
   border-radius:10px;
   padding:18px;
   background:#fff;
+}
+
+.tracker-text{
+  margin:0;
+  font-size:1.05rem;
+  font-weight:500;
+  text-align:center;
+}
+
+.step-title{
+  display:block;
+  font-size:32px;
+  color:red;
+  text-align:center;
+  margin-bottom:6px;
 }
