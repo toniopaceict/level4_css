@@ -55,45 +55,24 @@ body{
   display:block;
 }
 
-/* red YouTube button */
-
-.video-thumb::after{
-  content:'';
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%, -50%);
-  width:80px;
-  height:56px;
-  background:#ff0000;
-  border-radius:12px;
-  box-shadow:0 2px 8px rgba(0,0,0,0.4);
-  z-index:2;
-  transition:all 0.2s ease;
-}
-
-/* white triangle */
+/* small play triangle */
 
 .video-thumb::before{
   content:'';
   position:absolute;
   top:50%;
   left:50%;
-  transform:translate(-35%, -50%);
+  transform:translate(-40%, -50%);
   border-style:solid;
-  border-width:12px 0 12px 20px;
+  border-width:14px 0 14px 22px;
   border-color:transparent transparent transparent white;
   z-index:3;
-  transition:all 0.2s ease;
+  opacity:0.9;
+  transition:transform 0.2s ease;
 }
 
 /* hover effect */
 
-.video-thumb:hover::after{
-  transform:translate(-50%, -50%) scale(1.1);
-  background:#cc0000;
-}
-
 .video-thumb:hover::before{
-  transform:translate(-35%, -50%) scale(1.1);
+  transform:translate(-40%, -50%) scale(1.2);
 }
