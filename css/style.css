@@ -55,6 +55,8 @@ body{
   display:block;
 }
 
+/* red YouTube button */
+
 .video-thumb::after{
   content:'';
   position:absolute;
@@ -66,7 +68,11 @@ body{
   background:#ff0000;
   border-radius:12px;
   box-shadow:0 2px 8px rgba(0,0,0,0.4);
+  z-index:2;
+  transition:all 0.2s ease;
 }
+
+/* white triangle */
 
 .video-thumb::before{
   content:'';
@@ -77,8 +83,17 @@ body{
   border-style:solid;
   border-width:12px 0 12px 20px;
   border-color:transparent transparent transparent white;
+  z-index:3;
+  transition:all 0.2s ease;
 }
 
+/* hover effect */
+
 .video-thumb:hover::after{
+  transform:translate(-50%, -50%) scale(1.1);
   background:#cc0000;
+}
+
+.video-thumb:hover::before{
+  transform:translate(-35%, -50%) scale(1.1);
 }
