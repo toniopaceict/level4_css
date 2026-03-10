@@ -11,7 +11,10 @@ body{
 .wrap{
   max-width:1200px;
   margin:0 auto;
-  padding:10px 40px 10px;
+  padding:0 40px;
+  display:flex;
+  flex-direction:column;
+  gap:24px;
 }
 
 .tracker-box{
