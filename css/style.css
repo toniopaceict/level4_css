@@ -153,7 +153,7 @@ body{
 MCQ QUIZ STYLING
 ---------------------------------------------------- */
 
-.mcq{
+fieldset.mcq{
   border:1px solid #0b3c6f;
   border-radius:10px;
   padding:14px;
@@ -161,30 +161,43 @@ MCQ QUIZ STYLING
   background:#fff;
 }
 
-.mcq legend{
+fieldset.mcq legend{
   padding:0 8px;
-  font-weight:600;
+  font-weight:700;
+  color:#0b3c6f;
 }
 
-.option{
+fieldset.mcq .meta{
+  margin:0 0 8px;
+}
+
+fieldset.mcq .q{
+  margin:0 0 14px;
+}
+
+label.option{
   display:flex;
   align-items:center;
   gap:10px;
   padding:6px 0;
   cursor:pointer;
   font-size:1rem;
+  color:#0b3c6f;
 }
 
-.option input{
+label.option input[type="radio"]{
+  margin:0;
+  flex:0 0 auto;
   cursor:pointer;
 }
 
-.option span{
+label.option > span:not(.symbol){
   flex:1;
 }
 
 .symbol{
   width:18px;
+  min-width:18px;
   text-align:center;
   font-weight:700;
 }
@@ -203,14 +216,17 @@ MCQ QUIZ STYLING
   padding:10px 12px;
   border-radius:6px;
   font-size:0.95rem;
+  line-height:1.4;
 }
 
 .fb.ok{
+  display:block;
   background:#e6f4ea;
   color:#137333;
 }
 
 .fb.err{
+  display:block;
   background:#fce8e6;
   color:#b3261e;
 }
@@ -219,18 +235,26 @@ MCQ QUIZ STYLING
   margin-top:10px;
 }
 
-.qbtn{
+button.qbtn{
+  display:inline-block;
+  padding:10px 14px;
+  border:1px solid #0b3c6f;
+  border-radius:8px;
   background:#0b3c6f;
   color:#fff;
-  border:none;
-  border-radius:6px;
-  padding:8px 14px;
-  font-size:0.9rem;
+  font-size:0.95rem;
   cursor:pointer;
+  appearance:none;
+  -webkit-appearance:none;
 }
 
-.qbtn:hover{
-  background:#082c52;
+button.qbtn:hover{
+  background:#08508f;
+}
+
+button.qbtn:disabled{
+  opacity:0.7;
+  cursor:not-allowed;
 }
 
 @media (max-width:600px){
