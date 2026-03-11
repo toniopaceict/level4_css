@@ -11,7 +11,7 @@ body{
 .wrap{
   max-width:1200px;
   margin:0 auto;
-  padding:0 40px;
+  padding:0 40px 60px;
   display:flex;
   flex-direction:column;
   gap:24px;
@@ -152,7 +152,7 @@ body{
 .lesson-hero{
   background:#234764;
   color:#fff;
-  padding:44px 24px;
+  padding:44px 24px 70px;
 }
 
 .lesson-hero-inner{
