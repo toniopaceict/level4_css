@@ -15,6 +15,7 @@ body{
   display:flex;
   flex-direction:column;
   gap:24px;
+   padding-bottom:60px;
 }
 
 .tracker-box,
@@ -152,7 +153,8 @@ body{
 .lesson-hero{
   background:#234764;
   color:#fff;
-  padding:44px 24px 70px;
+  padding:44px 24px;
+  margin-bottom:40px;
 }
 
 .lesson-hero-inner{
