@@ -210,4 +210,17 @@ body{
   .lesson-hero{
     padding:32px 16px;
   }
+
+.site-footer{
+  max-width:1200px;
+  margin:40px auto 20px;
+  padding:0 40px;
+  text-align:right;
+  font-size:0.9rem;
+  color:#5f6f82;
+  font-style:italic;
+}
+
+
+  
 }
