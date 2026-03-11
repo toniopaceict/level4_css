@@ -189,6 +189,10 @@ body{
   .wrap{
     padding:0 16px;
   }
+  .site-footer{
+  padding-right:16px;
+  font-size:0.75rem;
+}
 
   .tracker-row,
   .password-row{
@@ -213,12 +217,11 @@ body{
 
 .site-footer{
   max-width:1200px;
-  margin:40px auto 20px;
-  padding:0 40px;
+  margin:30px auto 10px;
+  padding-right:24px;
   text-align:right;
-  font-size:0.9rem;
+  font-size:0.8rem;
   color:#5f6f82;
-  font-style:italic;
 }
 
 
