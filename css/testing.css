@@ -216,12 +216,10 @@ body{
   }
 
 .site-footer{
-  max-width:1200px;
-  margin:30px auto 10px;
-  padding-right:24px;
-  text-align:right;
-  font-size:0.8rem;
+  font-size:0.75rem;
   color:#5f6f82;
+  text-align:right;
+  margin:30px 24px 10px 0;
 }
 
 
