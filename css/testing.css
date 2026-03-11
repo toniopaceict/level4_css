@@ -114,8 +114,6 @@ body{
   text-align:center;
 }
 
-
-
 #passwordBox{
   width:220px;
   padding:12px;
@@ -150,29 +148,6 @@ body{
   color:#b3261e;
   text-align:center;
 }
-
-@media (max-width:600px){
-  .wrap{
-    padding:0 16px;
-  }
-
-  .tracker-row,
-  .password-row{
-    flex-direction:column;
-    align-items:stretch;
-  }
-
-  .tracker-input,
-  .tracker-btn,
-  #passwordBox,
-  #submitButton{
-    width:100%;
-  }
-
-  .step-title{
-    font-size:26px;
-  }
-
 
 .lesson-hero{
   background:#234764;
@@ -209,5 +184,29 @@ body{
   color:#fff;
 }
 
-  
+@media (max-width:600px){
+  .wrap{
+    padding:0 16px;
+  }
+
+  .tracker-row,
+  .password-row{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .tracker-input,
+  .tracker-btn,
+  #passwordBox,
+  #submitButton{
+    width:100%;
+  }
+
+  .step-title{
+    font-size:26px;
+  }
+
+  .lesson-hero{
+    padding:32px 16px;
+  }
 }
