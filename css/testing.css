@@ -73,6 +73,12 @@ body{
   transform:translate(-40%, -50%) scale(1.2);
 }
 
+.site-footer{
+  font-size:0.75rem;
+  color:#5f6f82;
+  text-align:right;
+  margin:30px 24px 10px 0;
+}
 .tracker-row,
 .password-row{
   display:flex;
@@ -215,12 +221,7 @@ body{
     padding:32px 16px;
   }
 
-.site-footer{
-  font-size:0.75rem;
-  color:#5f6f82;
-  text-align:right;
-  margin:30px 24px 10px 0;
-}
+
 
 
   
