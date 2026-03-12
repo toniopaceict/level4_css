@@ -11,26 +11,60 @@ body{
 .wrap{
   max-width:1200px;
   margin:0 auto;
-  padding:0 40px;
+  padding:0 40px 60px;
   display:flex;
   flex-direction:column;
-  gap:24px;
+  gap:26px;
+}
+
+.lesson-hero{
+  background:#0b3c6f;
+  color:#fff;
+  text-align:center;
+  padding:40px 0 24px;
+  margin-bottom:10px;
+}
+
+.lesson-hero-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 40px;
+}
+
+.lesson-hero-small{
+  margin:0 0 8px;
+  font-size:0.85rem;
+  letter-spacing:1px;
+  opacity:0.9;
+}
+
+.lesson-hero h1{
+  margin:0;
+  font-size:36px;
+  color:#fff;
+}
+
+.lesson-hero-subtitle{
+  margin:8px 0 0;
+  font-size:1.1rem;
+  opacity:0.95;
 }
 
 .tracker-box,
 .password-box{
   border:1px solid #0b3c6f;
   border-radius:10px;
-  padding:18px;
+  padding:26px 18px 30px;
   background:#fff;
 }
 
 .tracker-text,
 .step-text{
-  margin:0 0 20px;
+  margin:0 0 26px;
   font-size:1.05rem;
   font-weight:500;
   text-align:center;
+  line-height:1.6;
 }
 
 .step-title{
@@ -38,7 +72,58 @@ body{
   font-size:32px;
   color:red;
   text-align:center;
-  margin-bottom:6px;
+  margin:0 0 10px;
+}
+
+.tracker-row,
+.password-row{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  align-items:center;
+  margin-top:6px;
+}
+
+.tracker-input,
+#passwordBox{
+  width:220px;
+  padding:12px;
+  border:1px solid #0b3c6f;
+  border-radius:8px;
+  font-size:1rem;
+  color:#0b3c6f;
+  background:#fff;
+  box-sizing:border-box;
+}
+
+.tracker-btn,
+#submitButton{
+  padding:12px 16px;
+  border:1px solid #0b3c6f;
+  border-radius:8px;
+  background:#0b3c6f;
+  color:#fff;
+  font-size:1rem;
+  cursor:pointer;
+  box-sizing:border-box;
+  flex-shrink:0;
+}
+
+.tracker-btn:hover,
+#submitButton:hover{
+  background:#08508f;
+}
+
+.tracker-message,
+#errorMessage{
+  margin-top:12px;
+  font-weight:700;
+  min-height:24px;
+  text-align:center;
+}
+
+#errorMessage{
+  color:#b3261e;
 }
 
 .video-thumb{
@@ -55,111 +140,53 @@ body{
   display:block;
 }
 
-.video-thumb::before{
-  content:'';
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-40%, -50%);
-  border-style:solid;
-  border-width:14px 0 14px 22px;
-  border-color:transparent transparent transparent white;
-  z-index:3;
-  opacity:0.9;
-  transition:transform 0.2s ease;
-}
-
-.video-thumb:hover::before{
-  transform:translate(-40%, -50%) scale(1.2);
-}
-
-.tracker-row,
-.password-row{
-  display:flex;
-  gap:10px;
-  justify-content:center;
-  align-items:end;
-  margin-top:10px;
-}
-
-.tracker-input{
-  width:200px;
-  padding:12px;
-  border:1px solid #0b3c6f;
-  border-radius:8px;
-  font-size:1rem;
-  color:#0b3c6f;
-  background:#fff;
+.site-footer{
+  max-width:1200px;
+  margin:30px auto 10px;
+  padding:0 40px;
+  font-size:0.75rem;
+  color:#5f6f82;
+  text-align:right;
   box-sizing:border-box;
 }
-
-.tracker-btn{
-  padding:12px 16px;
-  border:1px solid #0b3c6f;
-  border-radius:8px;
-  background:#0b3c6f;
-  color:#fff;
-  font-size:1rem;
-  cursor:pointer;
-}
-
-.tracker-btn:hover{
-  background:#08508f;
-}
-
-.tracker-message{
-  margin-top:8px;
-  font-weight:700;
-  min-height:24px;
-  text-align:center;
-}
-
-#passwordBox{
-  width:220px;
-  padding:12px;
-  border:1px solid #0b3c6f;
-  border-radius:8px;
-  font-size:1rem;
-  color:#0b3c6f;
-  background:#fff;
-  box-sizing:border-box;
-  -webkit-text-security:disc;
-}
-
-#submitButton{
-  padding:12px 16px;
-  border:1px solid #0b3c6f;
-  border-radius:8px;
-  background:#0b3c6f;
-  color:#fff;
-  font-size:1rem;
-  cursor:pointer;
-  flex-shrink:0;
-}
-
-#submitButton:hover{
-  background:#08508f;
-}
-
-#errorMessage{
-  margin-top:8px;
-  font-weight:700;
-  min-height:24px;
-  color:#b3261e;
-  text-align:center;
-}
-
-
 
 @media (max-width:600px){
   .wrap{
+    padding:0 16px 40px;
+  }
+
+  .lesson-hero{
+    padding:30px 0 18px;
+  }
+
+  .lesson-hero-inner{
     padding:0 16px;
+  }
+
+  .lesson-hero h1{
+    font-size:28px;
+  }
+
+  .lesson-hero-subtitle{
+    font-size:1rem;
+  }
+
+  .tracker-box,
+  .password-box{
+    padding:22px 16px 24px;
+  }
+
+  .tracker-text,
+  .step-text{
+    margin:0 0 20px;
+    line-height:1.5;
   }
 
   .tracker-row,
   .password-row{
     flex-direction:column;
     align-items:stretch;
+    margin-top:4px;
   }
 
   .tracker-input,
@@ -171,5 +198,10 @@ body{
 
   .step-title{
     font-size:26px;
+  }
+
+  .site-footer{
+    padding:0 16px;
+    margin:20px auto 10px;
   }
 }
