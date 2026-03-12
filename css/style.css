@@ -17,6 +17,10 @@ body{
   gap:24px;
 }
 
+.wrap > .tracker-box:first-child{
+  margin-top:40px;
+}
+
 .lesson-hero{
   background:#0b3c6f;
   color:#fff;
