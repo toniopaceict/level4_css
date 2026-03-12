@@ -8,7 +8,7 @@ body{
   color:#0b3c6f;
 }
 
-/* page container */
+/* main page container */
 
 .wrap{
   max-width:1200px;
@@ -19,7 +19,7 @@ body{
   gap:24px;
 }
 
-/* lesson header */
+/* header */
 
 .lesson-hero{
   background:#0b3c6f;
@@ -59,9 +59,11 @@ body{
 .password-box{
   border:1px solid #0b3c6f;
   border-radius:10px;
-  padding:18px;
+  padding:22px;
   background:#fff;
 }
+
+/* text */
 
 .tracker-text,
 .step-text{
@@ -71,7 +73,7 @@ body{
   text-align:center;
 }
 
-/* step title */
+/* step titles */
 
 .step-title{
   display:block;
@@ -79,6 +81,46 @@ body{
   color:red;
   text-align:center;
   margin-bottom:6px;
+}
+
+/* form rows */
+
+.tracker-row,
+.password-row{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  align-items:center;
+}
+
+/* inputs */
+
+.tracker-input,
+#passwordBox{
+  width:220px;
+  padding:10px;
+  border:1px solid #0b3c6f;
+  border-radius:6px;
+  font-size:0.95rem;
+  color:#0b3c6f;
+}
+
+/* buttons */
+
+.tracker-btn,
+#submitButton{
+  padding:10px 14px;
+  border:1px solid #0b3c6f;
+  background:#f3f6fa;
+  color:#0b3c6f;
+  border-radius:6px;
+  font-size:0.95rem;
+  cursor:pointer;
+}
+
+.tracker-btn:hover,
+#submitButton:hover{
+  background:#e3eaf3;
 }
 
 /* video thumbnail */
@@ -134,7 +176,6 @@ body{
 
   .site-footer{
     padding:0 16px;
-    margin:20px auto 10px;
   }
 
   .tracker-row,
