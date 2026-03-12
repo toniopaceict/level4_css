@@ -50,6 +50,10 @@ body{
   opacity:0.95;
 }
 
+.tracker-text-secondary{
+  margin-top:-8px;
+}
+
 .tracker-box,
 .password-box{
   border:1px solid #0b3c6f;
