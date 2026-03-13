@@ -104,7 +104,11 @@ body{
   font-size:0.95rem;
   color:#0b3c6f;
 }
-
+.tracker-message{
+  text-align:center;
+  margin-top:10px;
+  font-weight:500;
+}
 /* buttons */
 
 .tracker-btn,
