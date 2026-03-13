@@ -9,11 +9,90 @@ body{
   background:#fff;
 }
 
+/* main page container */
+
 .wrap{
   max-width:1200px;
   margin:0 auto;
-  padding:0 40px 32px;
+  padding:0 40px 60px;
+  display:flex;
+  flex-direction:column;
+  gap:24px;
 }
+
+/* header */
+
+.lesson-hero{
+  background:#0b3c6f;
+  color:#fff;
+  text-align:center;
+  padding:40px 0 24px;
+}
+
+.lesson-hero-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 40px;
+}
+
+.lesson-hero-small{
+  margin:0 0 6px;
+  font-size:0.85rem;
+  letter-spacing:1px;
+  opacity:0.9;
+}
+
+.lesson-hero h1{
+  margin:0;
+  font-size:36px;
+  color:#fff;
+}
+
+.lesson-hero h2{
+  margin:6px 0 0;
+  font-size:1.1rem;
+  font-weight:500;
+  color:#fff;
+  opacity:0.95;
+}
+
+.lesson-hero-subtitle{
+  margin:0 0 6px;
+  font-size:1.1rem;
+  opacity:0.95;
+}
+
+/* boxes */
+
+.tracker-box,
+.password-box,
+fieldset{
+  border:1px solid #0b3c6f;
+  border-radius:10px;
+  background:#fff;
+}
+
+.tracker-box,
+.password-box{
+  padding:22px;
+}
+
+/* text */
+
+.tracker-text,
+.step-text{
+  margin:0 0 20px;
+  font-size:1.05rem;
+  font-weight:500;
+  text-align:center;
+  line-height:1.6;
+}
+
+.tracker-text-secondary{
+  font-weight:400;
+}
+
+/* headings for practice content */
 
 h2,
 h3,
@@ -22,7 +101,7 @@ legend,
   color:#0b3c6f;
 }
 
-h2{
+h2.content-heading{
   margin:0 0 22px;
   font-size:1.5rem;
   font-weight:700;
@@ -34,10 +113,151 @@ h3{
   font-size:1.25rem;
 }
 
+/* step titles */
+
+.step-title{
+  display:block;
+  font-size:32px;
+  color:red;
+  text-align:center;
+  margin-bottom:6px;
+}
+
+/* form rows */
+
+.tracker-row,
+.password-row{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+/* inputs */
+
+.tracker-input,
+#passwordBox{
+  width:220px;
+  padding:10px;
+  border:1px solid #0b3c6f;
+  border-radius:6px;
+  font-size:0.95rem;
+  color:#0b3c6f;
+  background:#fff;
+  box-sizing:border-box;
+}
+
+/* buttons */
+
+.tracker-btn,
+#submitButton,
+button.qbtn{
+  padding:10px 14px;
+  border:1px solid #0b3c6f;
+  border-radius:6px;
+  background:#f3f6fa;
+  color:#0b3c6f;
+  font-size:0.95rem;
+  cursor:pointer;
+  appearance:none;
+  -webkit-appearance:none;
+}
+
+.tracker-btn:hover,
+#submitButton:hover,
+button.qbtn:hover{
+  background:#e3eaf3;
+}
+
+.tracker-btn:disabled,
+#submitButton:disabled,
+button.qbtn:disabled{
+  opacity:0.7;
+  cursor:not-allowed;
+}
+
+/* links */
+
+.download-link{
+  color:red;
+  text-decoration:none;
+}
+
+.download-link:hover{
+  text-decoration:underline;
+}
+
+/* video thumbnail */
+
+.video-thumb{
+  position:relative;
+  max-width:900px;
+  margin:0 auto;
+  display:block;
+}
+
+.video-thumb img{
+  width:100%;
+  display:block;
+  border-radius:10px;
+}
+
+/* messages */
+
+.tracker-message,
+#message,
+#errorMessage{
+  text-align:center;
+  margin-top:10px;
+  font-weight:500;
+}
+
+#errorMessage{
+  color:#b3261e;
+}
+
+/* practice content */
+
+.q{
+  margin:0 0 16px;
+  font-size:1.05rem;
+  line-height:1.7;
+}
+
+fieldset{
+  padding:14px 16px 16px;
+  margin:0;
+}
+
+legend{
+  padding:0 8px;
+  font-weight:700;
+}
+
+.tasklist{
+  list-style-position:outside;
+  margin:8px 0 0 40px;
+  padding-left:20px;
+  line-height:1.7;
+}
+
+.tasklist li{
+  margin-bottom:8px;
+}
+
+.tasklist li:last-child{
+  margin-bottom:0;
+}
+
+.section-gap{
+  margin-top:8px;
+}
+
 .scenario-table{
   width:100%;
   border-collapse:collapse;
-  margin:25px 0 25px;
+  margin:25px 0;
   font-size:1.05rem;
   color:#0b3c6f;
   table-layout:fixed;
@@ -56,145 +276,11 @@ h3{
   background:#eef3f8;
 }
 
-
-
-
-.download-link{
-  color:red;
-  text-decoration:none;
-}
-
-.download-link:hover{
-  text-decoration:underline;
-}
-
-.tracker-box,
-fieldset{
-  border:1px solid #0b3c6f;
-  border-radius:10px;
-  background:#fff;
-}
-
-.tracker-box{
-  padding:18px;
-  margin:0 0 28px;
-}
-
-.tracker-text{
-  margin:0 0 14px;
-  font-size:1.05rem;
-  font-weight:500;
-  text-align:center;
-  line-height:1.6;
-}
-
-.step-title{
-  display:block;
-  font-size:32px;
-  color:red;
-  text-align:center;
-  margin-bottom:6px;
-}
-
-.tracker-row{
-  display:flex;
-  gap:10px;
-  justify-content:center;
-  align-items:end;
-  flex-wrap:wrap;
-}
-
-.tracker-input{
-  width:200px;
-  padding:12px;
-  border:1px solid #0b3c6f;
-  border-radius:8px;
-  font-size:1rem;
-  color:#0b3c6f;
-  background:#fff;
-  box-sizing:border-box;
-}
-
-.tracker-btn{
-  padding:12px 16px;
-  border:1px solid #0b3c6f;
-  border-radius:8px;
-  background:#0b3c6f;
-  color:#fff;
-  font-size:1rem;
-  cursor:pointer;
-}
-
-.tracker-btn:hover{
-  background:#08508f;
-}
-
-.tracker-btn:disabled{
-  opacity:0.7;
-  cursor:not-allowed;
-}
-
-.tracker-message{
-  margin:8px 0 0;
-  font-weight:700;
-  min-height:24px;
-  text-align:center;
-}
-
-.q{
-  margin:0 0 16px;
-  font-size:1.05rem;
-  line-height:1.7;
-}
-
-fieldset{
-  padding:14px 16px 16px;
-  margin:0 0 16px;
-}
-
-legend{
-  padding:0 8px;
-  font-weight:700;
-}
-
-
-.tasklist{
-  list-style-position: outside;
-  margin:8px 0 0 40px;
-  padding-left:20px;
-  line-height:1.7;
-}
-
-.tasklist li{
-  margin-bottom:8px;
-}
-
-.tasklist li:last-child{
-  margin-bottom:0;
-}
-
-.section-gap{
-  margin-top:24px;
-}
-
-
-
-/* ----------------------------------------------------
-MCQ QUIZ STYLING
----------------------------------------------------- */
+/* MCQ */
 
 fieldset.mcq{
-  border:1px solid #0b3c6f;
-  border-radius:10px;
   padding:14px;
-  margin:0 0 16px;
-  background:#fff;
-}
-
-fieldset.mcq legend{
-  padding:0 8px;
-  font-weight:700;
-  color:#0b3c6f;
+  margin:0;
 }
 
 fieldset.mcq .meta{
@@ -265,39 +351,61 @@ label.option > span:not(.symbol){
   margin-top:10px;
 }
 
-button.qbtn{
-  display:inline-block;
-  padding:10px 14px;
-  border:1px solid #0b3c6f;
-  border-radius:8px;
-  background:#0b3c6f;
-  color:#fff;
-  font-size:0.95rem;
-  cursor:pointer;
-  appearance:none;
-  -webkit-appearance:none;
+/* footer */
+
+.site-footer{
+  max-width:1200px;
+  margin:30px auto 10px;
+  padding:0 40px;
+  font-size:0.75rem;
+  color:#5f6f82;
+  text-align:right;
+  box-sizing:border-box;
 }
 
-button.qbtn:hover{
-  background:#08508f;
-}
-
-button.qbtn:disabled{
-  opacity:0.7;
-  cursor:not-allowed;
-}
+/* mobile layout */
 
 @media (max-width:700px){
+
   .wrap{
-    padding:0 20px 24px;
+    padding:0 20px 40px;
+  }
+
+  .lesson-hero{
+    padding:30px 0 18px;
+  }
+
+  .lesson-hero-inner{
+    padding:0 20px;
+  }
+
+  .lesson-hero h1{
+    font-size:28px;
+  }
+
+  .lesson-hero h2,
+  .lesson-hero-subtitle{
+    font-size:1rem;
+  }
+
+  .tracker-row,
+  .password-row{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .tracker-input,
+  .tracker-btn,
+  #passwordBox,
+  #submitButton{
+    width:100%;
   }
 
   .step-title{
     font-size:26px;
   }
 
-  .tracker-input,
-  .tracker-btn{
-    width:100%;
+  .site-footer{
+    padding:0 20px;
   }
 }
