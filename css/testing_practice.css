@@ -72,8 +72,6 @@ fieldset{
   background:#fff;
 }
 
-
-
 .tracker-box,
 .password-box{
   padding:22px;
@@ -237,9 +235,10 @@ legend{
   font-weight:700;
 }
 
-.task-box legend{
+/* TASK LEGEND ONLY (not Q1, Q2 etc) */
+
+.task-box > legend{
   font-size:1.2rem;
-  font-weight:700;
   padding:0 10px;
 }
 
