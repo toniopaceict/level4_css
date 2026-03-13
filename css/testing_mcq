@@ -1,0 +1,219 @@
+:root{
+  font-family:system-ui, Segoe UI, Roboto, Arial, sans-serif;
+  color:#0b3c6f;
+}
+
+body{
+  margin:0;
+  color:#0b3c6f;
+}
+
+/* main page container */
+
+.wrap{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 40px 60px;
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+
+
+
+/* header */
+
+.lesson-hero{
+  background:#0b3c6f;
+  color:white;
+  text-align:center;
+  padding:40px 0 24px;
+}
+
+.lesson-hero-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 40px;
+}
+
+.lesson-hero-small{
+  margin:0 0 6px;
+  font-size:0.85rem;
+  letter-spacing:1px;
+  opacity:0.9;
+}
+
+.lesson-hero h1{
+  margin:0;
+  font-size:36px;
+  color:white;
+}
+
+.lesson-hero-subtitle{
+  margin-top:6px;
+  font-size:1.1rem;
+  opacity:0.95;
+}
+
+/* boxes */
+
+.tracker-box,
+.password-box{
+  border:1px solid #0b3c6f;
+  border-radius:10px;
+  padding:22px;
+  background:#fff;
+}
+
+/* text */
+
+.tracker-text,
+.step-text{
+  margin:0 0 20px;
+  font-size:1.05rem;
+  font-weight:500;
+  text-align:center;
+}
+
+/* step titles */
+
+.step-title{
+  display:block;
+  font-size:32px;
+  color:red;
+  text-align:center;
+  margin-bottom:6px;
+}
+
+/* form rows */
+
+.tracker-row,
+.password-row{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  align-items:center;
+}
+
+/* inputs */
+
+.tracker-input,
+#passwordBox{
+  width:220px;
+  padding:10px;
+  border:1px solid #0b3c6f;
+  border-radius:6px;
+  font-size:0.95rem;
+  color:#0b3c6f;
+}
+.tracker-message{
+  text-align:center;
+  margin-top:10px;
+  font-weight:500;
+}
+/* buttons */
+
+.tracker-btn,
+#submitButton{
+  padding:10px 14px;
+  border:1px solid #0b3c6f;
+  background:#f3f6fa;
+  color:#0b3c6f;
+  border-radius:6px;
+  font-size:0.95rem;
+  cursor:pointer;
+}
+
+.tracker-btn:hover,
+#submitButton:hover{
+  background:#e3eaf3;
+}
+
+/* video thumbnail */
+
+.video-thumb{
+  position:relative;
+  max-width:900px;
+  margin:0 auto;
+  display:block;
+}
+
+.video-thumb img{
+  width:100%;
+  display:block;
+  border-radius:10px;
+}
+
+/* footer */
+
+.site-footer{
+  max-width:1200px;
+  margin:30px auto 10px;
+  padding:0 40px;
+  font-size:0.75rem;
+  color:#5f6f82;
+  text-align:right;
+  box-sizing:border-box;
+}
+
+/* tracker messages */
+
+#message,
+#errorMessage{
+  text-align:center;
+  margin-top:10px;
+  font-weight:500;
+}
+
+#errorMessage{
+  color:#b3261e;
+}
+
+
+
+/* mobile layout */
+
+@media (max-width:600px){
+
+  .wrap{
+    padding:0 16px 40px;
+  }
+
+  .lesson-hero{
+    padding:30px 0 18px;
+  }
+
+  .lesson-hero-inner{
+    padding:0 16px;
+  }
+
+  .lesson-hero h1{
+    font-size:28px;
+  }
+
+  .lesson-hero-subtitle{
+    font-size:1rem;
+  }
+
+  .site-footer{
+    padding:0 16px;
+  }
+
+  .tracker-row,
+  .password-row{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .tracker-input,
+  .tracker-btn,
+  #passwordBox,
+  #submitButton{
+    width:100%;
+  }
+
+  .step-title{
+    font-size:26px;
+  }
+
+}
