@@ -72,6 +72,8 @@ fieldset{
   background:#fff;
 }
 
+
+
 .tracker-box,
 .password-box{
   padding:22px;
@@ -227,7 +229,7 @@ button.qbtn:disabled{
 
 fieldset{
   padding:14px 16px 16px;
-  margin:0;
+  margin:0 0 22px;
 }
 
 legend{
