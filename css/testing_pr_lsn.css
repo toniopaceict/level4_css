@@ -27,6 +27,7 @@ body{
   color:#fff;
   text-align:center;
   padding:40px 0 24px;
+  margin-bottom:24px;
 }
 
 .lesson-hero-inner{
@@ -62,10 +63,11 @@ body{
   opacity:0.95;
 }
 
-/* boxes */
+/* shared boxes */
 
 .tracker-box,
 .password-box,
+.task-box,
 fieldset{
   border:1px solid #0b3c6f;
   border-radius:10px;
@@ -73,8 +75,10 @@ fieldset{
 }
 
 .tracker-box,
-.password-box{
+.password-box,
+.task-box{
   padding:22px;
+  box-sizing:border-box;
 }
 
 /* text */
@@ -225,9 +229,17 @@ button.qbtn:disabled{
   line-height:1.7;
 }
 
-fieldset{
+/* inner question boxes only */
+
+.task-box fieldset,
+fieldset.mcq{
   padding:14px 16px 16px;
   margin:0 0 22px;
+}
+
+.task-box fieldset:last-child,
+fieldset.mcq:last-child{
+  margin-bottom:0;
 }
 
 legend{
@@ -235,11 +247,17 @@ legend{
   font-weight:700;
 }
 
-/* TASK LEGEND ONLY (not Q1, Q2 etc) */
+/* outer task box legend */
 
 .task-box > legend{
   font-size:1.2rem;
   padding:0 10px;
+}
+
+/* inner question legends */
+
+.task-box fieldset > legend{
+  font-size:1rem;
 }
 
 .tasklist{
@@ -284,11 +302,6 @@ legend{
 }
 
 /* MCQ */
-
-fieldset.mcq{
-  padding:14px;
-  margin:0;
-}
 
 fieldset.mcq .meta{
   margin:0 0 8px;
@@ -380,6 +393,7 @@ label.option > span:not(.symbol){
 
   .lesson-hero{
     padding:30px 0 18px;
+    margin-bottom:24px;
   }
 
   .lesson-hero-inner{
@@ -414,5 +428,10 @@ label.option > span:not(.symbol){
 
   .site-footer{
     padding:0 20px;
+  }
+
+  .tasklist{
+    margin-left:24px;
+    padding-left:12px;
   }
 }
