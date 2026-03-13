@@ -237,6 +237,12 @@ legend{
   font-weight:700;
 }
 
+.task-box legend{
+  font-size:1.15rem;
+  font-weight:700;
+  padding:0 10px;
+}
+
 .tasklist{
   list-style-position:outside;
   margin:8px 0 0 40px;
