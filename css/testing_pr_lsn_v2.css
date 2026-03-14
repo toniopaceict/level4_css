@@ -14,6 +14,8 @@ body{
   line-height:1.55;
 }
 
+/* Main page container */
+
 .wrap{
   max-width:1200px;
   margin:20px auto 0;
@@ -100,7 +102,7 @@ fieldset + fieldset{
   margin-top:18px;
 }
 
-/* Paragraphs and text */
+/* Paragraph text */
 
 .q,
 .tracker-text,
@@ -165,21 +167,24 @@ fieldset + fieldset{
   overflow:hidden;
 }
 
+/* Table cells */
 
 .scenario-table th,
 .scenario-table td{
   padding:12px 14px;
-  text-align:left;
   vertical-align:middle;
 }
+
+/* Header */
 
 .scenario-table th{
   background:#0b3c6f;
   color:#fff;
   font-weight:700;
+  text-align:center;
 }
 
-/* row borders */
+/* Row borders */
 
 .scenario-table tr td{
   border-top:1px solid #0b3c6f;
@@ -189,19 +194,28 @@ fieldset + fieldset{
   border-top:none;
 }
 
-/* vertical borders */
+/* Column borders */
 
 .scenario-table th + th,
 .scenario-table td + td{
   border-left:1px solid #0b3c6f;
 }
 
-/* softer alternating rows */
+/* Alternating row colour */
 
 .scenario-table tr:nth-child(even) td{
   background:#f7f9fc;
 }
 
+/* Column alignment */
+
+.scenario-table td:first-child{
+  text-align:left;
+}
+
+.scenario-table td:not(:first-child){
+  text-align:center;
+}
 
 /* Inputs and buttons */
 
@@ -289,9 +303,10 @@ fieldset + fieldset{
   text-align:right;
 }
 
-/* Responsive */
+/* Responsive layout */
 
 @media (max-width:600px){
+
   .wrap{
     padding:0 16px 40px;
   }
@@ -362,4 +377,5 @@ fieldset + fieldset{
     padding:0 16px;
     margin:20px auto 10px;
   }
+
 }
