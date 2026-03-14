@@ -154,15 +154,20 @@ fieldset + fieldset{
 
 .scenario-table{
   width:100%;
-  border-collapse:collapse;
-  margin:0;
+  max-width:700px;
+  margin:0 auto;
+  border-collapse:separate;
+  border-spacing:0;
   font-size:1rem;
   background:#fff;
+  border:1px solid #0b3c6f;
+  border-radius:10px;
+  overflow:hidden;
 }
+
 
 .scenario-table th,
 .scenario-table td{
-  border:1px solid #0b3c6f;
   padding:12px 14px;
   text-align:left;
   vertical-align:middle;
@@ -174,9 +179,29 @@ fieldset + fieldset{
   font-weight:700;
 }
 
+/* row borders */
+
+.scenario-table tr td{
+  border-top:1px solid #0b3c6f;
+}
+
+.scenario-table tr:first-child td{
+  border-top:none;
+}
+
+/* vertical borders */
+
+.scenario-table th + th,
+.scenario-table td + td{
+  border-left:1px solid #0b3c6f;
+}
+
+/* softer alternating rows */
+
 .scenario-table tr:nth-child(even) td{
   background:#f7f9fc;
 }
+
 
 /* Inputs and buttons */
 
