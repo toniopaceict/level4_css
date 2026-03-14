@@ -175,12 +175,28 @@ fieldset + fieldset{
   vertical-align:middle;
 }
 
+
+
 /* Header */
 
 .scenario-table th{
   background:#0b3c6f;
   color:#fff;
   font-weight:700;
+  text-align:center;
+}
+
+/* Text column (first column) */
+
+.scenario-table th:first-child,
+.scenario-table td:first-child{
+  text-align:left;
+}
+
+/* Numeric columns */
+
+.scenario-table th:not(:first-child),
+.scenario-table td:not(:first-child){
   text-align:center;
 }
 
