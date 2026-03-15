@@ -200,7 +200,7 @@ fieldset + fieldset{
 .download-buttons{
   display:flex;
   justify-content:center;
-  gap:12px;
+  gap:20px;
   flex-wrap:wrap;
 }
 
