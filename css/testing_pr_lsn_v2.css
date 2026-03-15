@@ -162,6 +162,20 @@ fieldset + fieldset{
   background:#fff;
 }
 
+
+/* Download link */
+.download-link{
+  color:#c1121f;
+  text-decoration:underline;
+  font-weight:600;
+}
+
+.download-link:hover{
+  text-decoration:none;
+}
+
+
+
 /* Table */
 
 .table-wrap{
