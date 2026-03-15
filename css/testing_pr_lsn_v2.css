@@ -77,6 +77,8 @@ body{
   background:#fff;
 }
 
+/* Legend styling (shared across all boxes) */
+
 .task-box > legend,
 .tracker-box > legend,
 .password-box > legend,
@@ -85,6 +87,8 @@ fieldset > legend{
   font-weight:700;
   color:#0b3c6f;
 }
+
+/* Task content */
 
 .task-box > fieldset{
   margin-top:18px;
@@ -162,13 +166,12 @@ fieldset + fieldset{
   background:#fff;
 }
 
-
 /* Download box */
 
 .download-box{
   width:100%;
   margin:0 0 6px;
-  padding:18px;
+  padding:26px 18px 30px;   /* now matches task-box */
   border:1px solid #0b3c6f;
   border-radius:10px;
   background:#fff;
@@ -179,6 +182,14 @@ fieldset + fieldset{
   font-size:1.05rem;
   line-height:1.6;
   font-weight:700;
+  text-align:center;
+}
+
+.download-buttons{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
 }
 
 .download-btn{
@@ -196,13 +207,6 @@ fieldset + fieldset{
 
 .download-btn:hover{
   background:#08508f;
-}
-
-.download-buttons{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  flex-wrap:wrap;
 }
 
 /* Table */
@@ -227,8 +231,6 @@ fieldset + fieldset{
   overflow:hidden;
 }
 
-/* Table cells */
-
 .scenario-table th,
 .scenario-table td{
   padding:12px 14px;
@@ -236,15 +238,11 @@ fieldset + fieldset{
   text-align:center;
 }
 
-/* Header */
-
 .scenario-table th{
   background:#0b3c6f;
   color:#fff;
   font-weight:700;
 }
-
-/* Row borders */
 
 .scenario-table tr td{
   border-top:1px solid #0b3c6f;
@@ -254,14 +252,10 @@ fieldset + fieldset{
   border-top:none;
 }
 
-/* Column borders */
-
 .scenario-table th + th,
 .scenario-table td + td{
   border-left:1px solid #0b3c6f;
 }
-
-/* Alternating rows */
 
 .scenario-table tr:nth-child(even) td{
   background:#f7f9fc;
@@ -371,14 +365,13 @@ fieldset + fieldset{
     margin-top:20px;
   }
 
-.download-box{
-  padding:16px 14px;
-}
+  .download-box{
+    padding:20px 14px 24px;
+  }
 
-.download-btn{
-  width:100%;
-}
-  
+  .download-btn{
+    width:100%;
+  }
 
   .lesson-hero{
     padding:24px 0 16px;
