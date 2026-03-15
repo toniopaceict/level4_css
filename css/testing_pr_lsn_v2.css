@@ -166,12 +166,12 @@ fieldset + fieldset{
 /* Download box */
 
 .download-box{
-  max-width:700px;
-  margin:0 auto 6px;
+  width:100%;
+  margin:0 0 6px;
   padding:18px;
   border:1px solid #0b3c6f;
   border-radius:10px;
-  background:#f7f9fc;
+  background:#fff;
   text-align:center;
 }
 
@@ -179,6 +179,7 @@ fieldset + fieldset{
   margin:0 0 14px;
   font-size:1.05rem;
   line-height:1.6;
+  font-weight:700;
 }
 
 .download-btn{
