@@ -197,7 +197,12 @@ fieldset + fieldset{
   background:#08508f;
 }
 
-
+.download-buttons{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
 
 /* Table */
 
