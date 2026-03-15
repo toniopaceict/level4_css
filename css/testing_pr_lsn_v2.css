@@ -146,6 +146,26 @@ fieldset + fieldset{
   margin-bottom:0;
 }
 
+/* question images */
+
+.question-image{
+  max-width:700px;
+  margin:18px auto;
+}
+
+.question-image img{
+  width:100%;
+  height:auto;
+  display:block;
+  border:1px solid #0b3c6f;
+  border-radius:10px;
+  background:#fff;
+}
+
+
+
+
+
 /* Table */
 
 .table-wrap{
