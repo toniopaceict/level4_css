@@ -364,6 +364,15 @@ fieldset + fieldset{
     margin-top:20px;
   }
 
+.download-box{
+  padding:16px 14px;
+}
+
+.download-btn{
+  width:100%;
+}
+  
+
   .lesson-hero{
     padding:24px 0 16px;
     margin-bottom:18px;
