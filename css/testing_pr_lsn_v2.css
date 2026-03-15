@@ -163,15 +163,37 @@ fieldset + fieldset{
 }
 
 
-/* Download link */
-.download-link{
-  color:#c1121f;
-  text-decoration:underline;
-  font-weight:600;
+/* Download box */
+
+.download-box{
+  max-width:700px;
+  margin:0 auto 6px;
+  padding:18px;
+  border:1px solid #0b3c6f;
+  border-radius:10px;
+  background:#f7f9fc;
+  text-align:center;
 }
 
-.download-link:hover{
+.download-text{
+  margin:0 0 14px;
+  font-size:1.05rem;
+  line-height:1.6;
+}
+
+.download-btn{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:8px;
+  background:#0b3c6f;
+  color:#fff;
   text-decoration:none;
+  font-weight:600;
+  border:1px solid #0b3c6f;
+}
+
+.download-btn:hover{
+  background:#08508f;
 }
 
 
