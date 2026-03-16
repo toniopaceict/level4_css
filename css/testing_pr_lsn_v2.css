@@ -64,6 +64,20 @@ body{
 
 /* Main boxes */
 
+.tracker-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.tracker-text{
+  margin:0;
+  font-weight:600;
+}
+
+
 .task-box,
 .tracker-box,
 .password-box,
