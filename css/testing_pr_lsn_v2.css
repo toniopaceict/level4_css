@@ -25,10 +25,6 @@ body{
   gap:24px;
 }
 
-.wrap > .tracker-box:first-child{
-  margin-top:40px;
-}
-
 /* Header */
 
 .lesson-hero{
@@ -70,25 +66,27 @@ body{
 
 .task-box,
 .tracker-box,
-.password-box{
+.password-box,
+.download-box{
   border:1px solid #0b3c6f;
   border-radius:10px;
-  padding:26px 18px 30px;
+  padding:24px 18px;
   background:#fff;
 }
 
-/* Legend styling (shared across all boxes) */
+/* Shared legend styling */
 
 .task-box > legend,
 .tracker-box > legend,
 .password-box > legend,
+.download-box > legend,
 fieldset > legend{
   padding:0 10px;
   font-weight:700;
   color:#0b3c6f;
 }
 
-/* Task content */
+/* Nested fieldsets */
 
 .task-box > fieldset{
   margin-top:18px;
@@ -103,7 +101,7 @@ fieldset{
 }
 
 fieldset + fieldset{
-  margin-top:18px;
+  margin-top:0;
 }
 
 /* Paragraph text */
@@ -126,14 +124,6 @@ fieldset + fieldset{
   margin-top:-8px;
 }
 
-.step-title{
-  display:block;
-  font-size:32px;
-  color:red;
-  text-align:center;
-  margin:0 0 10px;
-}
-
 /* Lists */
 
 .tasklist{
@@ -154,7 +144,7 @@ fieldset + fieldset{
 
 .question-image{
   max-width:700px;
-  margin:18px auto;
+  margin:18px auto 0;
 }
 
 .question-image img{
@@ -168,28 +158,12 @@ fieldset + fieldset{
 
 /* Download box */
 
-.download-box{
-  width:100%;
-  margin:0 0 6px;
-  padding:26px 18px 30px;   /* now matches task-box */
-  border:1px solid #0b3c6f;
-  border-radius:10px;
-  background:#fff;
-}
-
-.download-text{
-  margin:0 0 14px;
-  font-size:1.05rem;
-  line-height:1.6;
-  font-weight:700;
-  text-align:center;
-}
-
 .download-buttons{
   display:flex;
   justify-content:center;
   gap:20px;
   flex-wrap:wrap;
+  margin-top:10px;
 }
 
 .download-btn{
@@ -269,7 +243,7 @@ fieldset + fieldset{
   gap:10px;
   justify-content:center;
   align-items:center;
-  margin-top:6px;
+  margin-top:10px;
 }
 
 .tracker-input,
@@ -361,18 +335,6 @@ fieldset + fieldset{
     gap:18px;
   }
 
-  .wrap > .tracker-box:first-child{
-    margin-top:20px;
-  }
-
-  .download-box{
-    padding:20px 14px 24px;
-  }
-
-  .download-btn{
-    width:100%;
-  }
-
   .lesson-hero{
     padding:24px 0 16px;
     margin-bottom:18px;
@@ -402,8 +364,9 @@ fieldset + fieldset{
 
   .task-box,
   .tracker-box,
-  .password-box{
-    padding:18px 14px 22px;
+  .password-box,
+  .download-box{
+    padding:18px 14px;
   }
 
   fieldset{
@@ -413,6 +376,7 @@ fieldset + fieldset{
   .task-box > legend,
   .tracker-box > legend,
   .password-box > legend,
+  .download-box > legend,
   fieldset > legend{
     padding:0 8px;
     font-size:1rem;
@@ -430,11 +394,6 @@ fieldset + fieldset{
     margin-top:-4px;
   }
 
-  .step-title{
-    font-size:24px;
-    margin:0 0 8px;
-  }
-
   .tasklist{
     margin:8px 0 0 20px;
     padding-left:6px;
@@ -446,7 +405,7 @@ fieldset + fieldset{
 
   .question-image{
     max-width:100%;
-    margin:14px auto;
+    margin:14px auto 0;
   }
 
   .question-image img{
@@ -457,12 +416,21 @@ fieldset + fieldset{
     max-width:100%;
   }
 
+  .download-buttons{
+    gap:10px;
+    margin-top:10px;
+  }
+
+  .download-btn{
+    width:100%;
+  }
+
   .tracker-row,
   .password-row{
     flex-direction:column;
     align-items:stretch;
     gap:10px;
-    margin-top:4px;
+    margin-top:10px;
   }
 
   .tracker-input,
