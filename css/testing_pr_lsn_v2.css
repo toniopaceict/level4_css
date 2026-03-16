@@ -235,6 +235,99 @@ fieldset + fieldset{
   background:#f7f9fc;
 }
 
+/* MCQ */
+
+.quiz-block{
+  margin-top:18px;
+}
+
+.mcq{
+  margin-top:0;
+}
+
+.mcq .meta{
+  margin:0 0 8px;
+  font-size:0.95rem;
+  line-height:1.5;
+}
+
+.option{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  margin:0 0 12px;
+  padding:10px 12px;
+  border:1px solid #d7dfeb;
+  border-radius:8px;
+  background:#fff;
+  cursor:pointer;
+}
+
+.option input{
+  margin-top:3px;
+  flex-shrink:0;
+}
+
+.option span:nth-child(2){
+  flex:1;
+  line-height:1.5;
+}
+
+.symbol{
+  min-width:20px;
+  text-align:center;
+  font-weight:700;
+}
+
+.symbol.correct{
+  color:#137333;
+}
+
+.symbol.wrong{
+  color:#b3261e;
+}
+
+.actions{
+  margin-top:8px;
+}
+
+.qbtn{
+  padding:12px 16px;
+  border:1px solid #0b3c6f;
+  border-radius:8px;
+  background:#0b3c6f;
+  color:#fff;
+  font-size:1rem;
+  cursor:pointer;
+}
+
+.qbtn:hover{
+  background:#08508f;
+}
+
+.fb{
+  display:none;
+  margin-top:12px;
+  padding:10px 12px;
+  border-radius:8px;
+  font-weight:600;
+  line-height:1.5;
+}
+
+.fb.ok{
+  display:block;
+  background:#edf7ed;
+  color:#137333;
+  border:1px solid #137333;
+}
+
+.fb.err{
+  display:block;
+  background:#fdf1f0;
+  color:#b3261e;
+  border:1px solid #b3261e;
+}
+
 /* Inputs and buttons */
 
 .tracker-row,
@@ -422,6 +515,15 @@ fieldset + fieldset{
   }
 
   .download-btn{
+    width:100%;
+  }
+
+  .option{
+    padding:10px;
+    gap:8px;
+  }
+
+  .qbtn{
     width:100%;
   }
 
