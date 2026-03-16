@@ -313,14 +313,14 @@ fieldset + fieldset{
   display:block;
   background:#edf7ed;
   color:#137333;
-  border:1px solid #137333;
+  border:1px solid rgba(19,115,51,0.35);
 }
 
 .fb.err{
   display:block;
   background:#fdf1f0;
   color:#b3261e;
-  border:1px solid #b3261e;
+  border:1px solid rgba(179,38,30,0.35);
 }
 
 /* Inputs and buttons */
