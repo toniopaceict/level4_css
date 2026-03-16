@@ -265,13 +265,12 @@ fieldset + fieldset{
 }
 
 .option span:nth-child(2){
-  flex:1;
-  line-height:1.5;
+    line-height:1.5;
 }
 
 .symbol{
-  min-width:20px;
-  text-align:center;
+  width:18px;
+  margin-left:6px;
   font-weight:700;
 }
 
