@@ -254,17 +254,14 @@ fieldset + fieldset{
 .option{
   display:flex;
   align-items:flex-start;
-  gap:10px;
-  margin:0 0 12px;
-  padding:10px 12px;
-  border:1px solid #d7dfeb;
-  border-radius:8px;
-  background:#fff;
+  gap:8px;
+  margin:0 0 6px;
+  padding:2px 0;
   cursor:pointer;
 }
 
 .option input{
-  margin-top:3px;
+  margin-top:2px;
   flex-shrink:0;
 }
 
