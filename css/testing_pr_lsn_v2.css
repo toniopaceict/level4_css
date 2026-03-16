@@ -68,8 +68,19 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:14px;
+  gap:16px;
   flex-wrap:wrap;
+}
+
+.tracker-score{
+  margin:0;
+  padding:8px 16px;
+  border:1px solid #0b3c6f;
+  border-radius:20px;
+  background:#ffffff;
+  font-weight:600;
+  display:flex;
+  align-items:center;
 }
 
 .tracker-text{
@@ -471,7 +482,7 @@ fieldset + fieldset{
     padding:18px 14px;
   }
 
-  fieldset{
+  {
     padding:14px;
   }
 
