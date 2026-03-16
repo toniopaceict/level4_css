@@ -75,9 +75,9 @@ body{
 .tracker-score{
   margin:0;
   padding:8px 16px;
-  border:1px solid #0b3c6f;
+  border:1px solid rgba(11,60,111,0.35);
   border-radius:20px;
-  background:#ffffff;
+  background:#f6f9ff;
   font-weight:600;
   display:flex;
   align-items:center;
