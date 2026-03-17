@@ -339,7 +339,7 @@ fieldset > legend{
 
 /* Quiz layout */
 
-#quiz{
+#quizContainer{
   display:flex;
   flex-direction:column;
   gap:24px;
@@ -709,14 +709,10 @@ fieldset > legend{
     word-break:break-word;
   }
 
-  #quiz{
+  #quizContainer{
     gap:18px;
   }
-#quizContainer{
-  display:flex;
-  flex-direction:column;
-  gap:24px;
-}
+
   .quiz-topbar{
     padding:12px 14px;
   }
