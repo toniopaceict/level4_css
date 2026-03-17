@@ -88,10 +88,6 @@ fieldset{
   background:#fff;
 }
 
-fieldset + fieldset{
-  margin-top:0;
-}
-
 .task-box > legend,
 .tracker-box > legend,
 .password-box > legend,
