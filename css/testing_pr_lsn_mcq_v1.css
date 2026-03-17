@@ -712,7 +712,11 @@ fieldset > legend{
   #quiz{
     gap:18px;
   }
-
+#quizContainer{
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
   .quiz-topbar{
     padding:12px 14px;
   }
