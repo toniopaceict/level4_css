@@ -29,6 +29,10 @@ a{
   gap:24px;
 }
 
+.mcq + .mcq{
+  margin-top:32px;
+}
+
 /* Header */
 
 .lesson-hero{
