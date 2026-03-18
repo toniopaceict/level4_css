@@ -308,4 +308,22 @@ fieldset > legend{
 .fb{
   display:none;
   margin-top:10px;
-  padding
+  padding:8px 12px;
+  border-radius:8px;
+  font-weight:400;
+  line-height:1.5;
+}
+
+.fb.ok{
+  display:block;
+  background:#edf7ed;
+  color:#137333;
+  border:1px solid rgba(19,115,51,0.35);
+}
+
+.fb.err{
+  display:block;
+  background:#fdf1f0;
+  color:#b3261e;
+  border:1px solid rgba(179,38,30,0.35);
+}
