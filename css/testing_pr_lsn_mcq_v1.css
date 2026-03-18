@@ -345,6 +345,11 @@ fieldset > legend{
   gap:24px;
 }
 
+/* remove extra space before Results box */
+#quiz{
+  margin-bottom:0;
+}
+
 /* Quiz */
 
 .quiz-topbar{
