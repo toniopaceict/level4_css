@@ -318,6 +318,10 @@ fieldset + fieldset{
   text-align:center;
 }
 
+.tracker-message:empty {
+  display: none;
+}
+
 #errorMessage{
   color:#b3261e;
 }
