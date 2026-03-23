@@ -42,14 +42,14 @@ body{
   color:#0b3c6f;
 }
 
-.page-hero-divider-thick{
+.page-hero-divider-top{
   width:100%;
-  height:2mm;
+  height:0.5mm;
   background:#0b3c6f;
-  border-radius:3px;
+  border-radius:2px;
 }
 
-.page-hero-divider-thin{
+.page-hero-divider-bottom{
   width:100%;
   height:0.5mm;
   background:#0b3c6f;
