@@ -54,10 +54,8 @@ body{
   height:0.5mm;
   background:#0b3c6f;
   border-radius:2px;
-}
+  margin:0 0 1000px;
 
-.page-hero-divider.top{
-  margin:0 0 30px;
 }
 
 .page-hero h1{
@@ -75,10 +73,6 @@ body{
   line-height:1.2;
   font-weight:600;
   color:#0b3c6f;
-}
-
-.page-hero-divider.bottom{
-  margin:0;
 }
 
 .page-hero-image{
