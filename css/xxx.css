@@ -30,32 +30,37 @@ body{
 .lesson-hero{
   position:relative;
   overflow:hidden;
-  min-height:220px;
+  min-height:240px;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
+  margin:18px auto 24px;
+  width:min(1200px, calc(100% - 40px));
+  border-radius:28px;
+  box-shadow:0 10px 30px rgba(11,60,111,0.12);
   color:#fff;
-
-  border-bottom-left-radius:20px;
-  border-bottom-right-radius:20px;
+  background:#0b3c6f;
 }
 
-/* Header background */
-.hero-image{
+.lesson-hero-bg{
   position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
+  inset:0;
+  background-image:url("https://toniopaceict.github.io/level4_css/images/picture_header.jpg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  transform:scale(1.02);
 }
 
-/* Dark overlay for readability */
 .lesson-hero-overlay{
   position:absolute;
   inset:0;
-  background:rgba(11,60,111,0.45);
+  background:linear-gradient(
+    to bottom,
+    rgba(11,60,111,0.30),
+    rgba(11,60,111,0.42)
+  );
 }
 
 .lesson-hero::before,
@@ -65,6 +70,7 @@ body{
   left:-10%;
   width:120%;
   pointer-events:none;
+  z-index:1;
 }
 
 .lesson-hero::before{
@@ -88,22 +94,19 @@ body{
   animation:heroFloat 24s ease-in-out infinite;
 }
 
-/* Text stays above */
 .lesson-hero-inner{
   position:relative;
-  z-index:1;
+  z-index:2;
   max-width:1200px;
   margin:0 auto;
-  padding:0 40px;
+  padding:32px 40px;
 }
-
-
 
 .lesson-hero h1{
   margin:0;
   font-size:36px;
   color:#fff;
-  text-shadow:0 1px 1px rgba(255,255,255,0.35);
+  text-shadow:0 2px 8px rgba(0,0,0,0.18);
 }
 
 .lesson-hero h2{
@@ -111,7 +114,7 @@ body{
   font-size:1.5rem;
   font-weight:600;
   color:#fff;
-  text-shadow:0 1px 1px rgba(255,255,255,0.28);
+  text-shadow:0 2px 8px rgba(0,0,0,0.18);
 }
 
 .lesson-hero-subtitle,
@@ -120,7 +123,8 @@ body{
   font-size:1.1rem;
   letter-spacing:0.5px;
   color:#fff;
-  opacity:0.95;
+  opacity:0.98;
+  text-shadow:0 2px 8px rgba(0,0,0,0.18);
 }
 
 @keyframes heroWave{
@@ -605,8 +609,10 @@ fieldset + fieldset{
   }
 
   .lesson-hero{
-    padding:24px 0 16px;
-    margin-bottom:18px;
+    min-height:180px;
+    width:min(100% - 24px, 1200px);
+    margin:12px auto 18px;
+    border-radius:20px;
   }
 
   .lesson-hero::before{
@@ -620,7 +626,7 @@ fieldset + fieldset{
   }
 
   .lesson-hero-inner{
-    padding:0 14px;
+    padding:24px 18px;
   }
 
   .lesson-hero h1{
