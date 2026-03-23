@@ -43,11 +43,11 @@ body{
 
 .page-hero h1{
   margin:0;
-  font-size:clamp(3.6rem, 8vw, 6.2rem);
+  font-size:clamp(3.6rem, 6vw, 6.2rem);
   line-height:0.95;
   font-weight:800;
   letter-spacing:-1.5px;
-  color:#1f1f1f;
+  color:#0b3c6f;
 }
 
 .page-hero h2{
