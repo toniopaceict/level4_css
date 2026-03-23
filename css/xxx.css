@@ -10,7 +10,7 @@
 body{
   margin:0;
   color:#0b3c6f;
-  background:#fff;
+  background:#f3f3f3;
   line-height:1.55;
 }
 
@@ -18,77 +18,54 @@ body{
 
 .wrap{
   max-width:1200px;
-  margin:20px auto 0;
+  margin:0 auto;
   padding:0 40px 60px;
   display:flex;
   flex-direction:column;
   gap:24px;
 }
 
-/* Header */
+/* Editorial header */
 
-.lesson-hero{
-  position:relative;
-  overflow:hidden;
-  min-height:240px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.page-hero{
+  max-width:1200px;
+  margin:30px auto 28px;
+  padding:48px 40px 0;
   text-align:center;
-  margin:18px auto 24px;
-  width:min(1200px, calc(100% - 40px));
-  border-radius:28px;
-  box-shadow:0 10px 30px rgba(11,60,111,0.12);
-  color:#fff;
-  background:#0b3c6f;
 }
 
-.lesson-hero-bg{
-  position:absolute;
-  inset:0;
+.page-hero-topline{
+  margin:0 0 28px;
+  font-size:1rem;
+  line-height:1.4;
+  color:#0b3c6f;
+}
+
+.page-hero h1{
+  margin:0;
+  font-size:clamp(3.6rem, 8vw, 6.2rem);
+  line-height:0.95;
+  font-weight:800;
+  letter-spacing:-1.5px;
+  color:#1f1f1f;
+}
+
+.page-hero h2{
+  margin:18px 0 34px;
+  font-size:clamp(1.35rem, 3vw, 2rem);
+  line-height:1.2;
+  font-weight:600;
+  color:#0b3c6f;
+}
+
+.page-hero-image{
+  height:250px;
+  border-radius:22px;
   background-image:url("https://toniopaceict.github.io/level4_css/images/picture_header.jpg");
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
-}
-
-.lesson-hero-overlay{
-  position:absolute;
-  inset:0;
-  background:rgba(11,60,111,0.22);
-}
-
-.lesson-hero-inner{
-  position:relative;
-  z-index:2;
-  max-width:1200px;
-  margin:0 auto;
-  padding:32px 40px;
-}
-
-.lesson-hero h1{
-  margin:0;
-  font-size:36px;
-  color:#fff;
-  text-shadow:0 2px 8px rgba(0,0,0,0.18);
-}
-
-.lesson-hero h2{
-  margin:8px 0 0;
-  font-size:1.5rem;
-  font-weight:600;
-  color:#fff;
-  text-shadow:0 2px 8px rgba(0,0,0,0.18);
-}
-
-.lesson-hero-subtitle,
-.lesson-hero-small{
-  margin:0 0 8px;
-  font-size:1.1rem;
-  letter-spacing:0.5px;
-  color:#fff;
-  opacity:0.98;
-  text-shadow:0 2px 8px rgba(0,0,0,0.18);
+  box-shadow:0 10px 28px rgba(11,60,111,0.08);
 }
 
 /* Main boxes */
@@ -525,6 +502,15 @@ fieldset + fieldset{
     padding:0;
   }
 
+  .page-hero{
+    margin:0 0 20px;
+    padding:0 0 18px;
+  }
+
+  .page-hero-image{
+    box-shadow:none;
+  }
+
   .site-footer{
     margin-top:20px;
   }
@@ -538,38 +524,33 @@ fieldset + fieldset{
   }
 
   .wrap{
-    margin:12px auto 0;
     padding:0 14px 36px;
     gap:18px;
   }
 
-  .lesson-hero{
-    min-height:180px;
-    width:min(100% - 24px, 1200px);
-    margin:12px auto 18px;
-    border-radius:20px;
+  .page-hero{
+    margin:18px auto 20px;
+    padding:24px 14px 0;
   }
 
-  .lesson-hero-inner{
-    padding:24px 18px;
-  }
-
-  .lesson-hero h1{
-    font-size:1.9rem;
-    line-height:1.2;
-  }
-
-  .lesson-hero h2{
-    font-size:1.1rem;
-    line-height:1.35;
-    margin-top:6px;
-  }
-
-  .lesson-hero-subtitle,
-  .lesson-hero-small{
+  .page-hero-topline{
+    margin-bottom:18px;
     font-size:0.95rem;
-    line-height:1.4;
-    margin:0 0 6px;
+  }
+
+  .page-hero h1{
+    font-size:clamp(2.6rem, 12vw, 4rem);
+    letter-spacing:-1px;
+  }
+
+  .page-hero h2{
+    margin:12px 0 20px;
+    font-size:1.15rem;
+  }
+
+  .page-hero-image{
+    height:170px;
+    border-radius:18px;
   }
 
   .task-box,
