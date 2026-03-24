@@ -10,7 +10,7 @@
 body{
   margin:0;
   color:#0b3c6f;
-  background:#f5f7fa;
+  background:#FFFFFF;
   line-height:1.55;
 }
 
@@ -34,20 +34,34 @@ body{
   text-align:center;
 }
 
+.page-hero-panel{
+  background:rgba(11,60,111,0.04);
+  border-radius:18px;
+  padding:28px 24px;
+}
+
 .page-hero-topline{
-  margin:18px 0 34px;
+  margin:30px 0 24px;
   font-size:clamp(1.35rem, 3vw, 2rem);
   line-height:1.2;
   font-weight:600;
-  color:#5f6f82;
+  color:#0b3c6f;
 }
 
-.page-hero-divider{
+.page-hero-divider-top{
   width:100%;
-  height:2mm;
+  height:0.5mm;
   background:#0b3c6f;
   border-radius:2px;
-  margin:10px 0 28px;
+}
+
+.page-hero-divider-bottom{
+  width:100%;
+  height:0.5mm;
+  background:#0b3c6f;
+  border-radius:2px;
+  margin:0 0 50px;
+
 }
 
 .page-hero h1{
@@ -60,7 +74,7 @@ body{
 }
 
 .page-hero h2{
-  margin:18px 0 34px;
+  margin:14px 0 30px;
   font-size:clamp(1.35rem, 5vw, 2rem);
   line-height:1.2;
   font-weight:600;
@@ -83,14 +97,14 @@ body{
 .tracker-box,
 .password-box,
 .download-box{
-  border:1px solid rgba(11,60,111,0.25);
+  border:1px solid #0b3c6f;
   border-radius:10px;
   padding:24px 18px;
   background:#fff;
 }
 
 fieldset{
-  border:1px solid rgba(11,60,111,0.25);
+  border:1px solid #0b3c6f;
   border-radius:10px;
   padding:18px;
   margin:0;
@@ -144,7 +158,6 @@ fieldset + fieldset{
   margin:0 0 8px;
   font-size:0.95rem;
   line-height:1.5;
-  color:#5f6f82;
 }
 
 /* Lists */
@@ -174,7 +187,7 @@ fieldset + fieldset{
   width:100%;
   height:auto;
   display:block;
-  border:1px solid rgba(11,60,111,0.25);
+  border:1px solid #0b3c6f;
   border-radius:10px;
   background:#fff;
 }
@@ -203,7 +216,7 @@ fieldset + fieldset{
 }
 
 .download-btn:hover{
-  background:#1f5a8a;
+  background:#08508f;
 }
 
 /* Tables */
@@ -223,7 +236,7 @@ fieldset + fieldset{
   border-spacing:0;
   font-size:1rem;
   background:#fff;
-  border:1px solid rgba(11,60,111,0.25);
+  border:1px solid #0b3c6f;
   border-radius:10px;
   overflow:hidden;
 }
@@ -242,7 +255,7 @@ fieldset + fieldset{
 }
 
 .scenario-table tr td{
-  border-top:1px solid rgba(11,60,111,0.25);
+  border-top:1px solid #0b3c6f;
 }
 
 .scenario-table tr:first-child td{
@@ -251,7 +264,7 @@ fieldset + fieldset{
 
 .scenario-table th + th,
 .scenario-table td + td{
-  border-left:1px solid rgba(11,60,111,0.25);
+  border-left:1px solid #0b3c6f;
 }
 
 .scenario-table tr:nth-child(even) td{
@@ -273,7 +286,7 @@ fieldset + fieldset{
 .tracker-score{
   margin:0;
   padding:8px 16px;
-  border:1px solid rgba(11,60,111,0.25);
+  border:1px solid rgba(11,60,111,0.35);
   border-radius:10px;
   background:#f6f9ff;
   font-weight:600;
@@ -288,7 +301,7 @@ fieldset + fieldset{
 #passwordBox{
   width:220px;
   padding:12px;
-  border:1px solid rgba(11,60,111,0.25);
+  border:1px solid #0b3c6f;
   border-radius:8px;
   font-size:1rem;
   color:#0b3c6f;
@@ -313,7 +326,7 @@ fieldset + fieldset{
 #submitButton:hover,
 .qbtn:hover,
 .modal-btn:hover{
-  background:#1f5a8a;
+  background:#08508f;
 }
 
 .tracker-btn:disabled,
@@ -349,7 +362,7 @@ fieldset + fieldset{
 
 .video-thumb img{
   width:100%;
-  border:1px solid rgba(11,60,111,0.25);
+  border:1px solid #0b3c6f;
   border-radius:8px;
   display:block;
 }
@@ -374,7 +387,7 @@ fieldset + fieldset{
 }
 
 .quiz-topbar{
-  border:1px solid rgba(11,60,111,0.25);
+  border:1px solid #0b3c6f;
   border-radius:10px;
   padding:14px 16px;
   background:#fff;
