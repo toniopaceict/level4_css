@@ -29,7 +29,7 @@ body{
 
 .page-hero{
   max-width:1200px;
-  margin:30px auto 28px;
+  margin:30px auto 40px;
   padding:48px 40px 0;
   text-align:center;
 }
@@ -552,7 +552,7 @@ fieldset + fieldset{
   }
 
   .page-hero{
-    margin:18px auto 20px;
+    margin:18px auto 32px;
     padding:24px 14px 0;
   }
 
