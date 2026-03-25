@@ -56,7 +56,7 @@ body{
   width:100%;
   background:none;
   border:none;
-  padding:8px 18px; /* slight indentation */
+  padding:8px 30px; /* slight indentation was 18 */
   margin:0 0 6px;
   text-align:left;
   color:rgba(255,255,255,0.65);
@@ -86,7 +86,7 @@ body{
 
 .side-nav-submenu a{
   display:block;
-  padding:8px 30px; /* further indentation */
+  padding:8px 45px; /* further indentation was 30 */
   margin-bottom:4px;
   color:#ffffff;
   text-decoration:none;
