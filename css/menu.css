@@ -31,6 +31,8 @@ body{
   padding:24px 18px 28px;
 }
 
+/* Logo / Title */
+
 .side-nav-logo{
   display:block;
   margin-bottom:26px;
@@ -41,18 +43,49 @@ body{
   text-decoration:none;
 }
 
+/* Sections */
+
 .side-nav-section{
-  margin-bottom:22px;
+  margin-bottom:14px;
 }
 
-.side-nav-heading{
-  margin:0 0 10px;
+/* Section buttons (Lessons, Practice, etc.) */
+
+.side-nav-toggle{
+  width:100%;
+  background:none;
+  border:none;
+  padding:8px 10px;
+  margin:0 0 6px;
+  text-align:left;
+  color:rgba(255,255,255,0.75);
   font-size:0.82rem;
   font-weight:700;
   letter-spacing:0.4px;
   text-transform:uppercase;
-  color:rgba(255,255,255,0.72);
+  cursor:pointer;
+  border-radius:8px;
+  transition:background 0.2s ease, color 0.2s ease;
 }
+
+.side-nav-toggle:hover{
+  background:rgba(255,255,255,0.10);
+  color:#fff;
+}
+
+/* Submenu (hidden by default) */
+
+.side-nav-submenu{
+  display:none;
+}
+
+/* When open */
+
+.side-nav-section.open .side-nav-submenu{
+  display:block;
+}
+
+/* Links */
 
 .side-nav a{
   display:block;
@@ -63,16 +96,53 @@ body{
   border-radius:8px;
   font-size:0.96rem;
   line-height:1.35;
+  transition:background 0.2s ease;
 }
 
 .side-nav a:hover{
   background:rgba(255,255,255,0.12);
 }
 
+/* Active page */
+
 .side-nav a.active{
   background:#ffffff;
   color:#0b3c6f;
   font-weight:600;
+}
+
+/* ===== PAGE SHIFT (IMPORTANT) ===== */
+
+.page-shell{
+  margin-left:240px;
+}
+
+/* ===== MOBILE VERSION ===== */
+
+@media (max-width:900px){
+
+  .side-nav{
+    position:relative;
+    width:100%;
+    height:auto;
+  }
+
+  .page-shell{
+    margin-left:0;
+  }
+
+  .side-nav-inner{
+    padding:18px 14px 20px;
+  }
+
+  .side-nav-logo{
+    margin-bottom:18px;
+    font-size:1.05rem;
+  }
+
+  .side-nav-section{
+    margin-bottom:16px;
+  }
 }
 
 /* ===== PAGE SHELL ===== */
