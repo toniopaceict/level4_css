@@ -55,7 +55,7 @@ body{
   width:100%;
   background:none;
   border:none;
-  padding:8px 10px;
+  padding:8px 20px;
   margin:0 0 6px;
   text-align:left;
   color:rgba(255,255,255,0.75);
@@ -91,7 +91,7 @@ body{
   display:block;
   color:#fff;
   text-decoration:none;
-  padding:8px 10px;
+  padding:8px 30px;
   margin-bottom:4px;
   border-radius:8px;
   font-size:0.96rem;
