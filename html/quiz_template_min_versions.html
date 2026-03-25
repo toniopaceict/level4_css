@@ -110,7 +110,6 @@ const EXTRA_BOX = {
 
 <title></title>
 
-
 <style>
   .tracker-message:empty{
     display:none;
@@ -120,6 +119,11 @@ const EXTRA_BOX = {
 
 <body>
 
+<!-- =========================================================
+     REQUIRED FOR THE MENU
+     site-loader.js will place the menu/header here automatically
+     Do not remove this line
+     ========================================================= -->
 <div id="header-placeholder"></div>
 
 <div class="page-shell">
@@ -265,6 +269,20 @@ TonioPdfExport.initQuizPdfExport({
 });
 </script>
 
+<!-- =========================================================
+     SHARED MENU / HEADER LOADER
+     This file loads menu.css and header.js automatically
+
+     IMPORTANT:
+     Do NOT add menu.css or header.js separately in this page
+     because site-loader.js handles them centrally
+
+     FUTURE USE:
+     When you change the menu, you normally update the version
+     INSIDE site-loader.js, not here
+
+     Leave ?v=1 as it is unless you change site-loader.js itself
+     ========================================================= -->
 <script src="https://toniopaceict.github.io/level4_css/js/site-loader.js?v=1"></script>
 
 </body>
