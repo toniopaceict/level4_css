@@ -14,51 +14,72 @@ body{
   line-height:1.55;
 }
 
-/* ===== COMMON NAVIGATION HEADER ===== */
+/* ===== LEFT NAVIGATION MENU ===== */
 
-.top-nav{
-  width:100%;
+.side-nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:240px;
+  height:100vh;
   background:#0b3c6f;
+  overflow-y:auto;
+  z-index:1000;
 }
 
-.nav-inner{
-  max-width:1100px;
-  margin:0 auto;
-  padding:12px 20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.side-nav-inner{
+  padding:24px 18px 28px;
 }
 
-.nav-logo{
+.side-nav-logo{
+  display:block;
+  margin-bottom:26px;
   color:#fff;
-  font-size:1.1rem;
+  font-size:1.15rem;
+  font-weight:700;
+  line-height:1.2;
+  text-decoration:none;
+}
+
+.side-nav-section{
+  margin-bottom:22px;
+}
+
+.side-nav-heading{
+  margin:0 0 10px;
+  font-size:0.82rem;
+  font-weight:700;
+  letter-spacing:0.4px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.72);
+}
+
+.side-nav a{
+  display:block;
+  color:#fff;
+  text-decoration:none;
+  padding:8px 10px;
+  margin-bottom:4px;
+  border-radius:8px;
+  font-size:0.96rem;
+  line-height:1.35;
+}
+
+.side-nav a:hover{
+  background:rgba(255,255,255,0.12);
+}
+
+.side-nav a.active{
+  background:#ffffff;
+  color:#0b3c6f;
   font-weight:600;
-  text-decoration:none;
 }
 
-.nav-links{
-  display:flex;
-  gap:18px;
-  flex-wrap:wrap;
+/* ===== PAGE SHELL ===== */
+
+.page-shell{
+  margin-left:240px;
 }
-
-.nav-links a{
-  color:#fff;
-  text-decoration:none;
-  font-size:0.95rem;
-  padding:4px 0;
-}
-
-.nav-links a:hover{
-  text-decoration:underline;
-}
-
-.nav-links a.active{
-  border-bottom:2px solid #fff;
-}
-
-
 
 /* Main page container */
 
@@ -70,8 +91,6 @@ body{
   flex-direction:column;
   gap:24px;
 }
-
-
 
 /* Editorial header */
 
@@ -108,8 +127,7 @@ body{
   height:0.5mm;
   background:#0b3c6f;
   border-radius:2px;
-  margin:0 0 0px;
-
+  margin:0 0 0;
 }
 
 .page-hero h1{
@@ -563,8 +581,13 @@ fieldset + fieldset{
 /* Print */
 
 @media print{
+  .side-nav,
   .no-print{
     display:none !important;
+  }
+
+  .page-shell{
+    margin-left:0;
   }
 
   .wrap{
@@ -589,9 +612,34 @@ fieldset + fieldset{
 
 /* Responsive */
 
+@media (max-width:900px){
+  .side-nav{
+    position:relative;
+    width:100%;
+    height:auto;
+  }
+
+  .page-shell{
+    margin-left:0;
+  }
+}
+
 @media (max-width:600px){
   body{
     line-height:1.5;
+  }
+
+  .side-nav-inner{
+    padding:18px 14px 20px;
+  }
+
+  .side-nav-logo{
+    margin-bottom:18px;
+    font-size:1.05rem;
+  }
+
+  .side-nav-section{
+    margin-bottom:16px;
   }
 
   .wrap{
@@ -694,9 +742,4 @@ fieldset + fieldset{
     padding:0 14px;
     text-align:center;
   }
-
-
-
-
-  
 }
