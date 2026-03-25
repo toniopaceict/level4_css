@@ -14,6 +14,22 @@ body{
   line-height:1.55;
 }
 
+body.menu-open{
+  overflow:hidden;
+}
+
+/* ===== MOBILE MENU BUTTON ===== */
+
+.mobile-menu-btn{
+  display:none;
+}
+
+/* ===== MOBILE BACKDROP ===== */
+
+.mobile-menu-backdrop{
+  display:none;
+}
+
 /* ===== LEFT NAVIGATION MENU ===== */
 
 .side-nav{
@@ -28,15 +44,15 @@ body{
 }
 
 .side-nav-inner{
-  padding:24px 0 28px; /* no horizontal padding → allows true left alignment */
+  padding:24px 0 28px;
 }
 
-/* ===== LOGO (fully left) ===== */
+/* LOGO */
 
 .side-nav-logo{
   display:block;
   margin-bottom:26px;
-  padding:0 18px; /* small spacing but still visually left-aligned */
+  padding:0 18px;
   color:#fff;
   font-size:1.15rem;
   font-weight:700;
@@ -44,32 +60,28 @@ body{
   text-decoration:none;
 }
 
-/* ===== SECTIONS ===== */
+/* SECTION WRAPPER */
 
 .side-nav-section{
   margin-bottom:14px;
 }
 
-/* ===== LEVEL 1 (LESSONS, PRACTICE...) ===== */
+/* LEVEL 1 */
 
 .side-nav-toggle{
   width:100%;
   background:none;
   border:none;
- padding-top: 10px; /* slight indentation was 8, 18 */
- padding-bottom: 10px; /* slight indentation was 8, 18 */
- padding-left: 30px; /* slight indentation was 8, 18 */
- padding-right: 30px; /* slight indentation was 8, 18 */
+  padding:8px 18px;
   margin:0 0 6px;
   text-align:left;
-  color:rgba(255,255,255,0.65);
+  color:rgba(255,255,255,0.75);
   font-size:0.82rem;
   font-weight:700;
   letter-spacing:0.4px;
   text-transform:uppercase;
   cursor:pointer;
   border-radius:0;
-  transition:background 0.2s ease, color 0.2s ease;
 }
 
 .side-nav-toggle:hover{
@@ -77,7 +89,7 @@ body{
   color:#fff;
 }
 
-/* ===== LEVEL 2 (Lesson 1, Lesson 2...) ===== */
+/* LEVEL 2 */
 
 .side-nav-submenu{
   display:none;
@@ -89,25 +101,18 @@ body{
 
 .side-nav-submenu a{
   display:block;
-padding-top: 8px; /* further indentation was 30 */
-padding-bottom: 8px; /* further indentation was 30 */
-padding-left: 45px; /* further indentation was 30 */
-padding-right: 45px; /* further indentation was 30 */
- 
+  padding:8px 30px;
   margin-bottom:4px;
-  color:#ffffff;
+  color:#fff;
   text-decoration:none;
   font-size:0.96rem;
   line-height:1.35;
   border-radius:0;
-  transition:background 0.2s ease;
 }
 
 .side-nav-submenu a:hover{
   background:rgba(255,255,255,0.12);
 }
-
-/* ===== ACTIVE PAGE ===== */
 
 .side-nav-submenu a.active{
   background:#ffffff;
@@ -115,49 +120,11 @@ padding-right: 45px; /* further indentation was 30 */
   font-weight:600;
 }
 
-/* ===== PAGE SHIFT ===== */
+/* ===== PAGE SHELL ===== */
 
 .page-shell{
   margin-left:240px;
 }
-
-/* ===== MOBILE ===== */
-
-@media (max-width:900px){
-
-  .side-nav{
-    position:relative;
-    width:100%;
-    height:auto;
-  }
-
-  .page-shell{
-    margin-left:0;
-  }
-
-  .side-nav-inner{
-    padding:18px 0 20px;
-  }
-
-  .side-nav-logo{
-    padding:0 14px;
-    margin-bottom:18px;
-    font-size:1.05rem;
-  }
-
-  .side-nav-toggle{
-    padding:8px 14px;
-  }
-
-  .side-nav-submenu a{
-    padding:8px 22px;
-  }
-}
-
-
-
-
-
 
 /* Main page container */
 
@@ -205,7 +172,7 @@ padding-right: 45px; /* further indentation was 30 */
   height:0.5mm;
   background:#0b3c6f;
   border-radius:2px;
-  margin:0 0 0;
+  margin:0;
 }
 
 .page-hero h1{
@@ -660,6 +627,8 @@ fieldset + fieldset{
 
 @media print{
   .side-nav,
+  .mobile-menu-btn,
+  .mobile-menu-backdrop,
   .no-print{
     display:none !important;
   }
@@ -688,36 +657,79 @@ fieldset + fieldset{
   }
 }
 
-/* Responsive */
+/* Mobile and tablet */
 
 @media (max-width:900px){
+  .mobile-menu-btn{
+    display:block;
+    position:fixed;
+    top:12px;
+    left:12px;
+    z-index:1100;
+    padding:10px 14px;
+    border:1px solid #0b3c6f;
+    border-radius:8px;
+    background:#0b3c6f;
+    color:#fff;
+    font-size:0.95rem;
+    font-weight:600;
+    cursor:pointer;
+  }
+
+  .mobile-menu-backdrop{
+    display:block;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.35);
+    opacity:0;
+    visibility:hidden;
+    z-index:999;
+    transition:opacity 0.2s ease, visibility 0.2s ease;
+  }
+
+  .mobile-menu-backdrop.show{
+    opacity:1;
+    visibility:visible;
+  }
+
   .side-nav{
-    position:relative;
-    width:100%;
-    height:auto;
+    left:-260px;
+    width:240px;
+    height:100vh;
+    transition:left 0.25s ease;
+  }
+
+  .side-nav.mobile-open{
+    left:0;
   }
 
   .page-shell{
     margin-left:0;
+    padding-top:56px;
+  }
+
+  .side-nav-inner{
+    padding:18px 0 20px;
+  }
+
+  .side-nav-logo{
+    padding:0 14px;
+    margin-bottom:18px;
+    font-size:1.05rem;
+  }
+
+  .side-nav-toggle{
+    padding:8px 14px;
+  }
+
+  .side-nav-submenu a{
+    padding:8px 22px;
   }
 }
 
 @media (max-width:600px){
   body{
     line-height:1.5;
-  }
-
-  .side-nav-inner{
-    padding:18px 14px 20px;
-  }
-
-  .side-nav-logo{
-    margin-bottom:18px;
-    font-size:1.05rem;
-  }
-
-  .side-nav-section{
-    margin-bottom:16px;
   }
 
   .wrap{
