@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const headerPlaceholder = document.getElementById("header-placeholder");
   if (!headerPlaceholder) return;
 
-  fetch("https://toniopaceict.github.io/level4_css/header.html?v=1")
+  fetch("https://toniopaceict.github.io/level4_css/html/header.html?v=2")
     .then(response => {
       if (!response.ok) {
         throw new Error("Header file could not be loaded.");
