@@ -5,7 +5,7 @@
      If you edit menu.css or header.js, change 7 to 8
      Then students only need a normal refresh
      ======================================================= */
-  const MENU_VERSION = "7";
+  const MENU_VERSION = "8";
 
   /* Load shared menu CSS */
   const css = document.createElement("link");
