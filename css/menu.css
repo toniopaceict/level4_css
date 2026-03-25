@@ -675,7 +675,9 @@ fieldset + fieldset{
     font-weight:600;
     cursor:pointer;
   }
-
+  body.menu-open .mobile-menu-btn{
+    display:none;
+  }
   .mobile-menu-backdrop{
     display:block;
     position:fixed;
