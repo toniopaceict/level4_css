@@ -2,28 +2,38 @@ document.addEventListener("DOMContentLoaded", () => {
   const headerPlaceholder = document.getElementById("header-placeholder");
   if (!headerPlaceholder) return;
 
-  fetch("header.html")
+  fetch("/header.html")
     .then(response => {
-      if (!response.ok) {
-        throw new Error("Header file could not be loaded.");
-      }
+      if (!response.ok) throw new Error("Header not found");
       return response.text();
     })
     .then(data => {
       headerPlaceholder.innerHTML = data;
 
-      // Optional: highlight the current page automatically
       const currentPage = window.location.pathname.split("/").pop() || "index.html";
-      const navLinks = headerPlaceholder.querySelectorAll(".nav-links a");
+      const links = headerPlaceholder.querySelectorAll(".side-nav a");
 
-      navLinks.forEach(link => {
-        const linkPage = link.getAttribute("href");
-        if (linkPage === currentPage) {
+      links.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
           link.classList.add("active");
+
+          const parentSection = link.closest(".side-nav-section");
+          if (parentSection) {
+            parentSection.classList.add("open");
+          }
         }
       });
+
+      const toggles = headerPlaceholder.querySelectorAll(".side-nav-toggle");
+
+      toggles.forEach(toggle => {
+        toggle.addEventListener("click", () => {
+          const section = toggle.closest(".side-nav-section");
+          if (section) {
+            section.classList.toggle("open");
+          }
+        });
+      });
     })
-    .catch(error => {
-      console.error("Error loading header:", error);
-    });
+    .catch(err => console.error(err));
 });
