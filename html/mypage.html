@@ -25,80 +25,83 @@ window.MARK_COMPLETE_CONFIG = {
 </head>
 
 <body>
-  <!-- COMMON HEADER LOADS HERE -->
+
 <div id="header-placeholder"></div>
-<header class="page-hero">
-  <div class="page-hero-panel">
-    <div class="page-hero-divider-top"></div>
-    <p class="page-hero-topline">Excel Financial Functions</p>
-    <h1>Quiz</h1>
-    <h2>Part 2</h2>
-    <div class="page-hero-divider-bottom"></div>
-  </div>
-</header>
 
-<div class="wrap">
-
-  <div class="top-actions no-print">
-    <button type="button" class="tracker-btn" id="resetBtnTop">
-      Reset Quiz
-    </button>
-  </div>
-
-  <fieldset class="task-box">
-    <legend>Instructions</legend>
-    <p class="q no-print">
-      Read each question carefully and think about both the financial meaning and the Excel function involved.
-    </p>
-  </fieldset>
-
-  <form id="quiz" novalidate>
-    <div id="quizContainer"></div>
-  </form>
-
-  <fieldset class="tracker-box no-print">
-    <legend>Results & Export</legend>
-
-    <div class="quiz-topbar">
-      <div class="quiz-topbar-inner">
-        <p class="quiz-title">Excel Financial Functions: Quiz (Part 2)</p>
-
-        <div class="quiz-top-actions">
-          <p class="tracker-score" id="scoreBox" aria-live="polite">Score: 0 / 0 (0%)</p>
-          <button type="button" class="tracker-btn" id="savePdfBtn">Download PDF</button>
-        </div>
-      </div>
+<div class="page-shell">
+  <header class="page-hero">
+    <div class="page-hero-panel">
+      <div class="page-hero-divider-top"></div>
+      <p class="page-hero-topline">Excel Financial Functions</p>
+      <h1>Quiz</h1>
+      <h2>Part 2</h2>
+      <div class="page-hero-divider-bottom"></div>
     </div>
-  </fieldset>
+  </header>
 
-  <fieldset class="tracker-box no-print">
-    <legend>Mark as Complete</legend>
+  <div class="wrap">
 
-    <p class="q">
-      Enter your student code below to mark this quiz as complete.
-    </p>
-
-    <div class="tracker-row">
-      <input
-        type="text"
-        id="studentCode"
-        class="tracker-input"
-        placeholder="Enter your student code">
-
-      <button
-        id="markCompleteBtn"
-        type="button"
-        class="tracker-btn">
-        Mark this quiz as complete
+    <div class="top-actions no-print">
+      <button type="button" class="tracker-btn" id="resetBtnTop">
+        Reset Quiz
       </button>
     </div>
 
-    <p id="message" class="tracker-message"></p>
-  </fieldset>
+    <fieldset class="task-box">
+      <legend>Instructions</legend>
+      <p class="q no-print">
+        Read each question carefully and think about both the financial meaning and the Excel function involved.
+      </p>
+    </fieldset>
 
+    <form id="quiz" novalidate>
+      <div id="quizContainer"></div>
+    </form>
+
+    <fieldset class="tracker-box no-print">
+      <legend>Results & Export</legend>
+
+      <div class="quiz-topbar">
+        <div class="quiz-topbar-inner">
+          <p class="quiz-title">Excel Financial Functions: Quiz (Part 2)</p>
+
+          <div class="quiz-top-actions">
+            <p class="tracker-score" id="scoreBox" aria-live="polite">Score: 0 / 0 (0%)</p>
+            <button type="button" class="tracker-btn" id="savePdfBtn">Download PDF</button>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="tracker-box no-print">
+      <legend>Mark as Complete</legend>
+
+      <p class="q">
+        Enter your student code below to mark this quiz as complete.
+      </p>
+
+      <div class="tracker-row">
+        <input
+          type="text"
+          id="studentCode"
+          class="tracker-input"
+          placeholder="Enter your student code">
+
+        <button
+          id="markCompleteBtn"
+          type="button"
+          class="tracker-btn">
+          Mark this quiz as complete
+        </button>
+      </div>
+
+      <p id="message" class="tracker-message"></p>
+    </fieldset>
+
+  </div>
+
+  <div class="site-footer">© Tonio Pace 2026</div>
 </div>
-
-<div class="site-footer">© Tonio Pace 2026</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script src="https://toniopaceict.github.io/level4_css/js/quiz-engine.js?v=1"></script>
@@ -197,6 +200,7 @@ TonioPdfExport.initQuizPdfExport({
   includeSubtitleInFileName: true
 });
 </script>
-<script src="js/header.js"></script>
+
+<script src="/js/header.js"></script>
 </body>
 </html>
