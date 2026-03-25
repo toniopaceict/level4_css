@@ -1,1 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
+<script>
+/* =========================================================
+   LESSON PAGE CONFIG
+   EDIT ONLY THE VALUES BELOW
+   ========================================================= */
+const PAGE_CONFIG = {
+  /* Browser tab title */
+  pageTitle: "DA1: What If Analysis - Lesson",
+
+  /* Hero text */
+  topline: "Data Analysis",
+  mainTitle: "DA1: What If Analysis",
+  subTitle: "Part 1: Lesson",
+
+  /* Required file link
+     Replace with your Excel / PDF / other file link */
+  fileLink: "PASTE_FILE_LINK_HERE",
+
+  /* File button text */
+  fileButtonText: "Download Excel file",
+
+  /* YouTube video ID only
+     Example:
+     https://www.youtube.com/watch?v=abc123XYZ
+     then use: abc123XYZ */
+  youtubeVideoId: "VIDEO_ID_HERE",
+
+  /* Google Apps Script web app URL for Mark as Complete */
+  webAppUrl: "PASTE_YOUR_WEB_APP_URL_HERE",
+
+  /* Exercise code
+     IMPORTANT:
+     This must match the exercise code in your Google Sheet exactly */
+  exerciseCode: "DA1: Part 1 Lesson",
+
+  /* Footer */
+  footerText: "© Tonio Pace 2026"
+};
+</script>
+
+<title></title>
+<link rel="stylesheet" href="https://toniopaceict.github.io/level4_css/css/menu.css?v=2">
+
+<style>
+  .tracker-message:empty{
+    display:none;
+  }
+</style>
+</head>
+
+<body>
+
+<div id="header-placeholder"></div>
+
+<div class="page-shell">
+  <header class="page-hero">
+    <div class="page-hero-panel">
+      <div class="page-hero-divider-top"></div>
+      <p class="page-hero-topline" id="heroTopline"></p>
+      <h1 id="heroMainTitle"></h1>
+      <h2 id="heroSubTitle"></h2>
+      <div class="page-hero-divider-bottom"></div>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <fieldset class="download-box">
+      <legend>Required Files</legend>
+
+      <p class="q">
+        To complete this lesson, download the required files below.
+      </p>
+
+      <div class="download-buttons">
+        <a class="download-btn" id="fileLinkBtn" href="#">
+          Download file
+        </a>
+      </div>
+    </fieldset>
+
+    <fieldset class="tracker-box">
+      <legend>Video Lesson</legend>
+
+      <p class="q">
+        Watch the video lesson carefully before continuing.
+      </p>
+
+      <!-- The YouTube link and thumbnail are filled automatically from PAGE_CONFIG.youtubeVideoId -->
+      <a class="video-thumb" id="videoLink" href="#" target="_blank" rel="noopener">
+        <img id="videoThumb" alt="Video lesson thumbnail">
+      </a>
+    </fieldset>
+
+    <fieldset class="tracker-box no-print">
+      <legend>Mark as Complete</legend>
+
+      <p class="q">
+        Enter your student code below to mark this lesson as complete.
+      </p>
+
+      <div class="tracker-row">
+        <input
+          type="text"
+          id="studentCode"
+          class="tracker-input"
+          placeholder="Enter your student code">
+
+        <button
+          id="markCompleteBtn"
+          type="button"
+          class="tracker-btn">
+          Mark this lesson as complete
+        </button>
+      </div>
+
+      <p id="message" class="tracker-message"></p>
+    </fieldset>
+
+  </div>
+
+  <div class="site-footer" id="siteFooter"></div>
+</div>
+
+<script src="https://toniopaceict.github.io/level4_css/js/mark-complete.js?v=1"></script>
+
+<script>
+/* =========================================================
+   DO NOT EDIT BELOW UNLESS YOU WANT TO CHANGE THE TEMPLATE
+   ========================================================= */
+
+/* Set page title */
+document.title = PAGE_CONFIG.pageTitle;
+
+/* Set hero text */
+document.getElementById("heroTopline").textContent = PAGE_CONFIG.topline;
+document.getElementById("heroMainTitle").textContent = PAGE_CONFIG.mainTitle;
+document.getElementById("heroSubTitle").textContent = PAGE_CONFIG.subTitle;
+
+/* Set file button */
+document.getElementById("fileLinkBtn").href = PAGE_CONFIG.fileLink;
+document.getElementById("fileLinkBtn").textContent = PAGE_CONFIG.fileButtonText;
+
+/* Set video link and thumbnail */
+const videoUrl = "https://www.youtube.com/watch?v=" + PAGE_CONFIG.youtubeVideoId;
+const thumbUrl = "https://img.youtube.com/vi/" + PAGE_CONFIG.youtubeVideoId + "/maxresdefault.jpg";
+document.getElementById("videoLink").href = videoUrl;
+document.getElementById("videoThumb").src = thumbUrl;
+
+/* Set footer */
+document.getElementById("siteFooter").textContent = PAGE_CONFIG.footerText;
+
+/* Mark as Complete config */
+window.MARK_COMPLETE_CONFIG = {
+  webAppUrl: PAGE_CONFIG.webAppUrl,
+  exerciseCode: PAGE_CONFIG.exerciseCode,
+  inputId: "studentCode",
+  buttonId: "markCompleteBtn",
+  messageId: "message",
+  notReadyText: ""
+};
+
+window.MARK_COMPLETE_CONFIG.isReady = function () {
+  return true;
+};
+
+TonioMarkComplete.initMarkComplete();
+TonioMarkComplete.updateButtonState(true);
+</script>
+
+<script src="https://toniopaceict.github.io/level4_css/js/header.js?v=1"></script>
+</body>
+</html>
