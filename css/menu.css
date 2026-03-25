@@ -28,14 +28,15 @@ body{
 }
 
 .side-nav-inner{
-  padding:24px 18px 28px;
+  padding:24px 0 28px; /* no horizontal padding → allows true left alignment */
 }
 
-/* Logo / Title */
+/* ===== LOGO (fully left) ===== */
 
 .side-nav-logo{
   display:block;
   margin-bottom:26px;
+  padding:0 18px; /* small spacing but still visually left-aligned */
   color:#fff;
   font-size:1.15rem;
   font-weight:700;
@@ -43,19 +44,19 @@ body{
   text-decoration:none;
 }
 
-/* Sections */
+/* ===== SECTIONS ===== */
 
 .side-nav-section{
   margin-bottom:14px;
 }
 
-/* Section buttons (Lessons, Practice, etc.) */
+/* ===== LEVEL 1 (LESSONS, PRACTICE...) ===== */
 
 .side-nav-toggle{
   width:100%;
   background:none;
   border:none;
-  padding:8px 20px;
+  padding:8px 18px; /* slight indentation */
   margin:0 0 6px;
   text-align:left;
   color:rgba(255,255,255,0.75);
@@ -64,7 +65,7 @@ body{
   letter-spacing:0.4px;
   text-transform:uppercase;
   cursor:pointer;
-  border-radius:8px;
+  border-radius:0;
   transition:background 0.2s ease, color 0.2s ease;
 }
 
@@ -73,51 +74,47 @@ body{
   color:#fff;
 }
 
-/* Submenu (hidden by default) */
+/* ===== LEVEL 2 (Lesson 1, Lesson 2...) ===== */
 
 .side-nav-submenu{
   display:none;
 }
 
-/* When open */
-
 .side-nav-section.open .side-nav-submenu{
   display:block;
 }
 
-/* Links */
-
-.side-nav a{
+.side-nav-submenu a{
   display:block;
+  padding:8px 30px; /* further indentation */
+  margin-bottom:4px;
   color:#fff;
   text-decoration:none;
-  padding:8px 30px;
-  margin-bottom:4px;
-  border-radius:8px;
   font-size:0.96rem;
   line-height:1.35;
+  border-radius:0;
   transition:background 0.2s ease;
 }
 
-.side-nav a:hover{
+.side-nav-submenu a:hover{
   background:rgba(255,255,255,0.12);
 }
 
-/* Active page */
+/* ===== ACTIVE PAGE ===== */
 
-.side-nav a.active{
+.side-nav-submenu a.active{
   background:#ffffff;
   color:#0b3c6f;
   font-weight:600;
 }
 
-/* ===== PAGE SHIFT (IMPORTANT) ===== */
+/* ===== PAGE SHIFT ===== */
 
 .page-shell{
   margin-left:240px;
 }
 
-/* ===== MOBILE VERSION ===== */
+/* ===== MOBILE ===== */
 
 @media (max-width:900px){
 
@@ -132,24 +129,28 @@ body{
   }
 
   .side-nav-inner{
-    padding:18px 14px 20px;
+    padding:18px 0 20px;
   }
 
   .side-nav-logo{
+    padding:0 14px;
     margin-bottom:18px;
     font-size:1.05rem;
   }
 
-  .side-nav-section{
-    margin-bottom:16px;
+  .side-nav-toggle{
+    padding:8px 14px;
+  }
+
+  .side-nav-submenu a{
+    padding:8px 22px;
   }
 }
 
-/* ===== PAGE SHELL ===== */
 
-.page-shell{
-  margin-left:240px;
-}
+
+
+
 
 /* Main page container */
 
