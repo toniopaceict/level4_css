@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+function initTonioHeader() {
   const headerPlaceholder = document.getElementById("header-placeholder");
   if (!headerPlaceholder) return;
 
@@ -84,4 +84,10 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(error => {
       console.error("Error loading header:", error);
     });
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initTonioHeader);
+} else {
+  initTonioHeader();
+}
