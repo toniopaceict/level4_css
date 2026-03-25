@@ -14,17 +14,6 @@ body{
   line-height:1.55;
 }
 
-/* Main page container */
-
-.wrap{
-  max-width:1200px;
-  margin:0 auto;
-  padding:0 40px 60px;
-  display:flex;
-  flex-direction:column;
-  gap:24px;
-}
-
 /* ===== COMMON NAVIGATION HEADER ===== */
 
 .top-nav{
@@ -68,6 +57,21 @@ body{
 .nav-links a.active{
   border-bottom:2px solid #fff;
 }
+
+
+
+/* Main page container */
+
+.wrap{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 40px 60px;
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+
+
 
 /* Editorial header */
 
