@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Excel Financial Functions: Quiz (Part 2)</title>
+<link rel="stylesheet" href="https://toniopaceict.github.io/level4_css/css/yyy.css?v=10">
+
+<style>
+  .tracker-message:empty{
+    display:none;
+  }
+</style>
+
+<script>
+window.MARK_COMPLETE_CONFIG = {
+  webAppUrl: "https://script.google.com/macros/s/AKfycbzN3zc9oICP9HxaaWbzBcRViJmspdoL44TcJQDqpsVP3sJKNOvBokZpOlYRVePTPmDr/exec",
+  exerciseCode: "Excel Financial Functions Quiz Part 2",
+  inputId: "studentCode",
+  buttonId: "markCompleteBtn",
+  messageId: "message",
+  notReadyText: ""
+};
+</script>
+</head>
+
+<body>
+
+<header class="page-hero">
+  <div class="page-hero-panel">
+    <div class="page-hero-divider-top"></div>
+    <p class="page-hero-topline">Excel Financial Functions</p>
+    <h1>Quiz</h1>
+    <h2>Part 2</h2>
+    <div class="page-hero-divider-bottom"></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="top-actions no-print">
+    <button type="button" class="tracker-btn" id="resetBtnTop">
+      Reset Quiz
+    </button>
+  </div>
+
+  <fieldset class="task-box">
+    <legend>Instructions</legend>
+    <p class="q no-print">
+      Read each question carefully and think about both the financial meaning and the Excel function involved.
+    </p>
+  </fieldset>
+
+  <form id="quiz" novalidate>
+    <div id="quizContainer"></div>
+  </form>
+
+  <fieldset class="tracker-box no-print">
+    <legend>Results & Export</legend>
+
+    <div class="quiz-topbar">
+      <div class="quiz-topbar-inner">
+        <p class="quiz-title">Excel Financial Functions: Quiz (Part 2)</p>
+
+        <div class="quiz-top-actions">
+          <p class="tracker-score" id="scoreBox" aria-live="polite">Score: 0 / 0 (0%)</p>
+          <button type="button" class="tracker-btn" id="savePdfBtn">Download PDF</button>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="tracker-box no-print">
+    <legend>Mark as Complete</legend>
+
+    <p class="q">
+      Enter your student code below to mark this quiz as complete.
+    </p>
+
+    <div class="tracker-row">
+      <input
+        type="text"
+        id="studentCode"
+        class="tracker-input"
+        placeholder="Enter your student code">
+
+      <button
+        id="markCompleteBtn"
+        type="button"
+        class="tracker-btn">
+        Mark this quiz as complete
+      </button>
+    </div>
+
+    <p id="message" class="tracker-message"></p>
+  </fieldset>
+
+</div>
+
+<div class="site-footer">© Tonio Pace 2026</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://toniopaceict.github.io/level4_css/js/quiz-engine.js?v=1"></script>
+<script src="https://toniopaceict.github.io/level4_css/js/mark-complete.js?v=1"></script>
+<script src="https://toniopaceict.github.io/level4_css/js/pdf-export.js?v=1"></script>
+
+<script>
+const QUESTIONS = [
+  {
+    id: 'q1',
+    title: 'Q1',
+    text: 'In which of the following scenarios is the Present Value (PV) function most appropriately used?',
+    marks: 1,
+    correct: 'B',
+    options: [
+      { value: 'A', label: 'To calculate the final amount of an investment after earning interest' },
+      { value: 'B', label: 'To calculate how much must be invested today to reach a specific future amount' },
+      { value: 'C', label: 'To calculate the annual interest rate on a loan' },
+      { value: 'D', label: 'To calculate the total interest earned only' },
+      { value: 'E', label: 'To calculate the monthly repayment of a loan' }
+    ],
+    fbOk: 'Correct. The Present Value function is used when you know the future amount you want to receive and you need to calculate how much must be invested today to reach that target.',
+    fbBad: 'Not correct. The PV function is used to determine the amount that must be invested today in order to reach a known future value.'
+  },
+  {
+    id: 'q2',
+    title: 'Q2',
+    text: 'In 15 years’ time, you wish to have €100,000 in a bank account that pays 5% interest per year, compounded annually. How much should you invest today as a single lump sum?',
+    marks: 3,
+    correct: 'B',
+    options: [
+      { value: 'A', label: '€46,321' },
+      { value: 'B', label: '€48,102' },
+      { value: 'C', label: '€50,000' },
+      { value: 'D', label: '€52,000' },
+      { value: 'E', label: '€55,329' }
+    ],
+    fbOk: 'Correct. You correctly calculated the future value back to today using the Present Value function.',
+    fbBad: 'Not correct. The correct Excel inputs are Rate = 5%, Nper = 15, Pmt = 0 because there are no additional yearly payments, Fv = 100000 and Type = 0. Excel returns a negative value because this represents money invested today.'
+  },
+  {
+    id: 'q3',
+    title: 'Q3',
+    text: 'A couple would like to give €35,000 to their children in 10 years’ time to use as a deposit on an apartment. How much should they invest today if the bank pays 4% interest per year, compounded annually?',
+    marks: 3,
+    correct: 'A',
+    options: [
+      { value: 'A', label: '€23,644' },
+      { value: 'B', label: '€24,500' },
+      { value: 'C', label: '€25,000' },
+      { value: 'D', label: '€26,700' },
+      { value: 'E', label: '€28,402' }
+    ],
+    fbOk: 'Correct. You correctly applied the Present Value function to calculate how much must be invested today to reach €35,000 in 10 years.',
+    fbBad: 'Not correct. The correct Excel inputs are Rate = 4%, Nper = 10, Pmt = 0 because no additional payments are made, Fv = 35000 and Type = 0. This calculates the amount that must be invested today to reach the required future value.'
+  }
+];
+
+const extraInstructionHtml = `
+  <fieldset class="task-box">
+    <legend>Extra Instructions</legend>
+    <p class="q no-print">
+      For these exercises, you will need this Excel file.
+    </p>
+  </fieldset>
+`;
+
+const quizApi = TonioQuiz.initMainQuiz({
+  formId: 'quiz',
+  containerId: 'quizContainer',
+  scoreBoxId: 'scoreBox',
+  resetBtnId: 'resetBtnTop',
+  questions: QUESTIONS,
+  extraInstructionBeforeQuestionId: 'q3',
+  extraInstructionHtml: extraInstructionHtml,
+  onStateChange: function () {
+    TonioMarkComplete.updateButtonState(true);
+  },
+  onReset: function () {
+    TonioMarkComplete.updateButtonState(true);
+  }
+});
+
+window.MARK_COMPLETE_CONFIG.isReady = function () {
+  return true;
+};
+
+TonioMarkComplete.initMarkComplete();
+TonioMarkComplete.updateButtonState(true);
+
+TonioPdfExport.initQuizPdfExport({
+  buttonId: 'savePdfBtn',
+  quizSelector: '#quiz',
+  scoreSelector: '#scoreBox',
+  fallbackName: 'Quiz',
+  includeSubtitleInFileName: true
+});
+</script>
+
+</body>
+</html>
