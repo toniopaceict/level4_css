@@ -48,7 +48,6 @@ const PAGE_CONFIG = {
 </script>
 
 <title></title>
-<link rel="stylesheet" href="https://toniopaceict.github.io/level4_css/css/menu.css?v=2">
 
 <style>
   .tracker-message:empty{
@@ -59,6 +58,11 @@ const PAGE_CONFIG = {
 
 <body>
 
+<!-- =========================================================
+     REQUIRED FOR THE MENU
+     site-loader.js will place the menu/header here automatically
+     Do not remove this line
+     ========================================================= -->
 <div id="header-placeholder"></div>
 
 <div class="page-shell">
@@ -202,6 +206,21 @@ TonioPdfExport.initSimplePdfExport({
 });
 </script>
 
-<script src="https://toniopaceict.github.io/level4_css/js/header.js?v=1"></script>
+<!-- =========================================================
+     SHARED MENU / HEADER LOADER
+     This file loads menu.css and header.js automatically
+
+     IMPORTANT:
+     Do NOT add menu.css or header.js separately in this page
+     because site-loader.js handles them centrally
+
+     FUTURE USE:
+     When you change the menu, you normally update the version
+     INSIDE site-loader.js, not here
+
+     Leave ?v=2 as it is unless you change site-loader.js itself
+     ========================================================= -->
+<script src="https://toniopaceict.github.io/level4_css/js/site-loader.js?v=2"></script>
+
 </body>
 </html>
