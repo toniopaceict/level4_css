@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script>
+/* =========================================================
+   PRACTICE PAGE CONFIG
+   EDIT ONLY THE VALUES BELOW
+   ========================================================= */
+const PAGE_CONFIG = {
+  /* Browser tab title
+     IMPORTANT:
+     The PDF export name is usually based on this title,
+     so always update this carefully */
+  pageTitle: "DA1: What If Analysis - Practice Sheet",
+
+  /* Header text */
+  topline: "Data Analysis",
+  mainTitle: "DA1: What If Analysis",
+  subTitle: "Part 1: Practice Sheet",
+
+  /* Required file link */
+  fileLink: "PASTE_FILE_LINK_HERE",
+
+  /* File button text */
+  fileButtonText: "Download Excel file",
+
+  /* Google Apps Script web app URL for Mark as Complete */
+  webAppUrl: "PASTE_YOUR_WEB_APP_URL_HERE",
+
+  /* Exercise code
+     IMPORTANT:
+     This must match the exercise code in your Google Sheet exactly */
+  exerciseCode: "DA1: Part 1 Practice",
+
+  /* Text shown in the PDF button */
+  pdfButtonText: "Download Practice Sheet",
+
+  /* Fallback PDF name
+     Used if the export script cannot build the file name from the page title */
+  pdfFallbackName: "Practice Sheet",
+
+  /* Footer */
+  footerText: "© Tonio Pace 2026"
+};
+</script>
+
+<title></title>
+<link rel="stylesheet" href="https://toniopaceict.github.io/level4_css/css/menu.css?v=2">
+
+<style>
+  .tracker-message:empty{
+    display:none;
+  }
+</style>
+</head>
+
+<body>
+
+<div id="header-placeholder"></div>
+
+<div class="page-shell">
+  <header class="page-hero">
+    <div class="page-hero-panel">
+      <div class="page-hero-divider-top"></div>
+      <p class="page-hero-topline" id="heroTopline"></p>
+      <h1 id="heroMainTitle"></h1>
+      <h2 id="heroSubTitle"></h2>
+      <div class="page-hero-divider-bottom"></div>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <fieldset class="download-box">
+      <legend>Required Files</legend>
+
+      <p class="q">
+        To complete this task, download the required files below.
+      </p>
+
+      <div class="download-buttons">
+        <a class="download-btn" id="fileLinkBtn" href="#">
+          Download file
+        </a>
+      </div>
+    </fieldset>
+
+    <!-- ======================================================
+         PRACTICE CONTENT
+         EDIT THIS AREA FOR YOUR TASKS / QUESTIONS / TABLES
+         You can duplicate fieldsets as needed
+         ====================================================== -->
+    <fieldset class="task-box">
+      <legend>Task 1</legend>
+
+      <p class="q">
+        Add your task instructions here.
+      </p>
+    </fieldset>
+
+    <fieldset class="download-box">
+      <legend>Download</legend>
+
+      <p class="q">
+        If you want to keep a copy of this practice sheet, download it using the button below.
+      </p>
+
+      <div class="download-buttons">
+        <button type="button" class="tracker-btn" id="savePdfBtn">
+          Download Practice Sheet
+        </button>
+      </div>
+    </fieldset>
+
+    <fieldset class="tracker-box no-print">
+      <legend>Mark as Complete</legend>
+
+      <p class="q">
+        Enter your student code below to mark this practice sheet as complete.
+      </p>
+
+      <div class="tracker-row">
+        <input
+          type="text"
+          id="studentCode"
+          class="tracker-input"
+          placeholder="Enter your student code">
+
+        <button
+          id="markCompleteBtn"
+          type="button"
+          class="tracker-btn">
+          Mark this practice sheet as complete
+        </button>
+      </div>
+
+      <p id="message" class="tracker-message"></p>
+    </fieldset>
+
+  </div>
+
+  <div class="site-footer" id="siteFooter"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://toniopaceict.github.io/level4_css/js/mark-complete.js?v=1"></script>
+<script src="https://toniopaceict.github.io/level4_css/js/pdf-export.js?v=1"></script>
+
+<script>
+/* =========================================================
+   DO NOT EDIT BELOW UNLESS YOU WANT TO CHANGE THE TEMPLATE
+   ========================================================= */
+
+/* Set page title
+   IMPORTANT:
+   The PDF export name is linked to this area, so always keep it accurate */
+document.title = PAGE_CONFIG.pageTitle;
+
+/* Set hero text */
+document.getElementById("heroTopline").textContent = PAGE_CONFIG.topline;
+document.getElementById("heroMainTitle").textContent = PAGE_CONFIG.mainTitle;
+document.getElementById("heroSubTitle").textContent = PAGE_CONFIG.subTitle;
+
+/* Set file button */
+document.getElementById("fileLinkBtn").href = PAGE_CONFIG.fileLink;
+document.getElementById("fileLinkBtn").textContent = PAGE_CONFIG.fileButtonText;
+
+/* Set PDF button text */
+document.getElementById("savePdfBtn").textContent = PAGE_CONFIG.pdfButtonText;
+
+/* Set footer */
+document.getElementById("siteFooter").textContent = PAGE_CONFIG.footerText;
+
+/* Mark as Complete config */
+window.MARK_COMPLETE_CONFIG = {
+  webAppUrl: PAGE_CONFIG.webAppUrl,
+  exerciseCode: PAGE_CONFIG.exerciseCode,
+  inputId: "studentCode",
+  buttonId: "markCompleteBtn",
+  messageId: "message",
+  notReadyText: ""
+};
+
+window.MARK_COMPLETE_CONFIG.isReady = function () {
+  return true;
+};
+
+TonioMarkComplete.initMarkComplete();
+TonioMarkComplete.updateButtonState(true);
+
+/* PDF export
+   IMPORTANT:
+   The exported PDF name is taken mainly from the page title above */
+TonioPdfExport.initSimplePdfExport({
+  buttonId: "savePdfBtn",
+  sourceSelector: ".wrap",
+  fallbackName: PAGE_CONFIG.pdfFallbackName,
+  includeSubtitleInFileName: false
+});
+</script>
+
+<script src="https://toniopaceict.github.io/level4_css/js/header.js?v=1"></script>
+</body>
+</html>
