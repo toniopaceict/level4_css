@@ -497,11 +497,13 @@ fieldset + fieldset{
   margin:0;
 }
 
+/* Clean Results & Export layout */
+
 .quiz-topbar{
-  border:1px solid #0b3c6f;
-  border-radius:10px;
-  padding:14px 16px;
-  background:#fff;
+  border:none;
+  border-radius:0;
+  padding:0;
+  background:transparent;
 }
 
 .quiz-topbar-inner{
@@ -510,6 +512,7 @@ fieldset + fieldset{
   align-items:center;
   gap:14px;
   flex-wrap:wrap;
+  padding:0 0 10px;
 }
 
 .quiz-title{
@@ -525,6 +528,44 @@ fieldset + fieldset{
   gap:10px;
   flex-wrap:wrap;
 }
+
+.results-helper-text{
+  margin:0 0 14px;
+  font-size:0.98rem;
+  line-height:1.5;
+  color:#35506b;
+}
+
+.results-upload-row{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.upload-name-input{
+  flex:0 0 200px;
+  width:200px;
+  min-width:180px;
+}
+
+.upload-file-input{
+  flex:1 1 320px;
+  min-width:240px;
+}
+
+.upload-inline-btn{
+  flex:0 0 auto;
+  white-space:nowrap;
+}
+
+.upload-status{
+  margin-top:12px;
+  text-align:left;
+  font-weight:600;
+}
+
+/* Quiz blocks */
 
 .quiz-block{
   margin-top:18px;
@@ -675,9 +716,11 @@ fieldset + fieldset{
     font-weight:600;
     cursor:pointer;
   }
+
   body.menu-open .mobile-menu-btn{
     display:none;
   }
+
   .mobile-menu-backdrop{
     display:block;
     position:fixed;
@@ -821,13 +864,25 @@ fieldset + fieldset{
   .tracker-row,
   .password-row,
   .quiz-top-actions,
-  .quiz-topbar-inner{
+  .quiz-topbar-inner,
+  .results-upload-row{
     flex-direction:column;
     align-items:stretch;
   }
 
   .top-actions{
     justify-content:stretch;
+  }
+
+  .upload-name-input,
+  .upload-file-input,
+  .upload-inline-btn{
+    width:100%;
+    flex:1 1 100%;
+  }
+
+  .upload-status{
+    text-align:center;
   }
 
   .site-footer{
