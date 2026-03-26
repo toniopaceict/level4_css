@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script>
+/* =========================================================
+   QUIZ PAGE CONFIG
+   EDIT ONLY THIS SECTION
+   ========================================================= */
+const PAGE_CONFIG = {
+  /* Browser tab title
+     IMPORTANT:
+     The PDF file name is based mainly on this title */
+  pageTitle: "Excel Financial Functions: Quiz (Part 2)",
+
+  /* Hero text */
+  topline: "Excel Financial Functions",
+  mainTitle: "Quiz",
+  subTitle: "Part 2",
+
+  /* Mark as Complete */
+  webAppUrl: "https://script.google.com/macros/s/AKfycbzN3zc9oICP9HxaaWbzBcRViJmspdoL44TcJQDqpsVP3sJKNOvBokZpOlYRVePTPmDr/exec",
+  exerciseCode: "Excel Financial Functions Quiz Part 2",
+
+  /* Instructions box text */
+  instructionsText: "Read each question carefully and think about both the financial meaning and the Excel function involved.",
+
+  /* PDF export */
+  pdfButtonText: "Download PDF",
+  pdfFallbackName: "Quiz",
+
+  /* Upload settings
+     IMPORTANT:
+     Replace these with the upload web app and folder for this quiz */
+  uploadWebAppUrl: "https://script.google.com/macros/s/AKfycbxD9MGrzk67wuXE35bRURli6AMK1XbCVkgQUpkCdxkKhRQASI1YxXiypr993AGeWhH9OA/exec",
+  uploadFolderId: "1WlRegFcshnHYjyPmF09lAxkWLs6NsY8V",
+  uploadAssignment: "Excel_Financial_Functions_Quiz_Part_2",
+  uploadMaxFileSizeMB: 10,
+
+  /* Footer */
+  footerText: "© Tonio Pace 2026"
+};
+
+/* =========================================================
+   QUIZ QUESTIONS
+   EDIT THIS ARRAY FOR EACH NEW QUIZ
+   ========================================================= */
+const QUESTIONS = [
+  {
+    id: "q1",
+    title: "Q1 - 1 mark",
+    text: "In which of the following scenarios is the Present Value (PV) function most appropriately used?",
+    correct: "B",
+    options: [
+      { value: "A", label: "To calculate the final amount of an investment after earning interest" },
+      { value: "B", label: "To calculate how much must be invested today to reach a specific future amount" },
+      { value: "C", label: "To calculate the annual interest rate on a loan" },
+      { value: "D", label: "To calculate the total interest earned only" },
+      { value: "E", label: "To calculate the monthly repayment of a loan" }
+    ],
+    fbOk: "Correct. The Present Value function is used when you know the future amount you want to receive and you need to calculate how much must be invested today to reach that target.",
+    fbBad: "Not correct. The PV function is used to determine the amount that must be invested today in order to reach a known future value."
+  },
+  {
+    id: "q2",
+    title: "Q2 - 3 marks",
+    text: "In 15 years’ time, you wish to have €100,000 in a bank account that pays 5% interest per year, compounded annually. How much should you invest today as a single lump sum?",
+    correct: "B",
+    options: [
+      { value: "A", label: "€46,321" },
+      { value: "B", label: "€48,102" },
+      { value: "C", label: "€50,000" },
+      { value: "D", label: "€52,000" },
+      { value: "E", label: "€55,329" }
+    ],
+    fbOk: "Correct. You correctly calculated the future value back to today using the Present Value function.",
+    fbBad: "Not correct. The correct Excel inputs are Rate = 5%, Nper = 15, Pmt = 0 because there are no additional yearly payments, Fv = 100000 and Type = 0. Excel returns a negative value because this represents money invested today."
+  },
+  {
+    id: "q3",
+    title: "Q3 - 3 marks",
+    text: "A couple would like to give €35,000 to their children in 10 years’ time to use as a deposit on an apartment. How much should they invest today if the bank pays 4% interest per year, compounded annually?",
+    correct: "A",
+    options: [
+      { value: "A", label: "€23,644" },
+      { value: "B", label: "€24,500" },
+      { value: "C", label: "€25,000" },
+      { value: "D", label: "€26,700" },
+      { value: "E", label: "€28,402" }
+    ],
+    fbOk: "Correct. You correctly applied the Present Value function to calculate how much must be invested today to reach €35,000 in 10 years.",
+    fbBad: "Not correct. The correct Excel inputs are Rate = 4%, Nper = 10, Pmt = 0 because no additional payments are made, Fv = 35000 and Type = 0. This calculates the amount that must be invested today to reach the required future value."
+  }
+];
+
+/* =========================================================
+   OPTIONAL EXTRA BOX
+   Leave enabled only if needed
+   ========================================================= */
+const EXTRA_BOX = {
+  enabled: false,
+
+  /* Insert this box before this question id */
+  beforeQuestionId: "q3",
+
+  html: `
+    <fieldset class="task-box">
+      <legend>Extra Instructions</legend>
+      <p class="q no-print">
+        For these exercises, you will need this Excel file.
+      </p>
+    </fieldset>
+  `
+};
+</script>
+
+<title></title>
+
+<style>
+  .tracker-message:empty{
+    display:none;
+  }
+
+  .upload-row{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    align-items:center;
+    margin-top:12px;
+  }
+
+  .upload-row .tracker-input{
+    flex:1 1 260px;
+    min-width:220px;
+  }
+
+  .upload-note{
+    margin:0 0 12px;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     REQUIRED FOR THE MENU
+     site-loader.js will place the menu/header here automatically
+     Do not remove this line
+     ========================================================= -->
+<div id="header-placeholder"></div>
+
+<div class="page-shell">
+  <header class="page-hero">
+    <div class="page-hero-panel">
+      <div class="page-hero-divider-top"></div>
+      <p class="page-hero-topline" id="heroTopline"></p>
+      <h1 id="heroMainTitle"></h1>
+      <h2 id="heroSubTitle"></h2>
+      <div class="page-hero-divider-bottom"></div>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <div class="top-actions no-print">
+      <button type="button" class="tracker-btn" id="resetBtnTop">Reset Quiz</button>
+    </div>
+
+    <fieldset class="task-box">
+      <legend>Instructions</legend>
+      <p class="q no-print" id="instructionsText"></p>
+    </fieldset>
+
+    <form id="quiz" novalidate>
+      <div id="quizContainer"></div>
+    </form>
+
+    <fieldset class="tracker-box no-print">
+      <legend>Results & Export</legend>
+
+      <div class="quiz-topbar">
+        <div class="quiz-topbar-inner">
+          <p class="quiz-title" id="quizTitle"></p>
+
+          <div class="quiz-top-actions">
+            <p class="tracker-score" id="scoreBox" aria-live="polite">Score: 0 / 0 (0%)</p>
+            <button type="button" class="tracker-btn" id="savePdfBtn">Download PDF</button>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- =========================================================
+         UPLOAD QUIZ PDF
+         Students first download the PDF, then upload that PDF here
+         ========================================================= -->
+    <fieldset class="tracker-box no-print">
+      <legend>Upload Quiz PDF</legend>
+
+      <p class="q upload-note">
+        First click <strong>Download PDF</strong> above and save the file on your device.
+        Then upload that same PDF here.
+      </p>
+
+      <div class="upload-row">
+        <!-- Student name required for the uploaded file name -->
+        <input
+          type="text"
+          id="studentName"
+          class="tracker-input"
+          placeholder="Enter your full name">
+
+        <!-- Only PDF allowed -->
+        <input
+          type="file"
+          id="quizPdfFile"
+          class="tracker-input"
+          accept=".pdf,application/pdf">
+      </div>
+
+      <div class="upload-row">
+        <button
+          id="uploadQuizBtn"
+          type="button"
+          class="tracker-btn">
+          Upload PDF copy
+        </button>
+      </div>
+
+      <p id="uploadMessage" class="tracker-message"></p>
+    </fieldset>
+
+    <fieldset class="tracker-box no-print">
+      <legend>Mark as Complete</legend>
+
+      <p class="q">
+        Upload your PDF copy first. Then enter your student code below to mark this quiz as complete.
+      </p>
+
+      <div class="tracker-row">
+        <input
+          type="text"
+          id="studentCode"
+          class="tracker-input"
+          placeholder="Enter your student code">
+
+        <button
+          id="markCompleteBtn"
+          type="button"
+          class="tracker-btn">
+          Mark this quiz as complete
+        </button>
+      </div>
+
+      <p id="message" class="tracker-message"></p>
+    </fieldset>
+
+  </div>
+
+  <div class="site-footer" id="siteFooter"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://toniopaceict.github.io/level4_css/js/quiz-engine.js?v=1"></script>
+<script src="https://toniopaceict.github.io/level4_css/js/mark-complete.js?v=1"></script>
+<script src="https://toniopaceict.github.io/level4_css/js/pdf-export.js?v=1"></script>
+
+<script>
+/* =========================================================
+   DO NOT EDIT BELOW UNLESS YOU WANT TO CHANGE THE TEMPLATE
+   ========================================================= */
+
+/* Set page title
+   IMPORTANT:
+   The PDF name is based mainly on this */
+document.title = PAGE_CONFIG.pageTitle;
+
+/* Set hero text */
+document.getElementById("heroTopline").textContent = PAGE_CONFIG.topline;
+document.getElementById("heroMainTitle").textContent = PAGE_CONFIG.mainTitle;
+document.getElementById("heroSubTitle").textContent = PAGE_CONFIG.subTitle;
+
+/* Set page text */
+document.getElementById("instructionsText").textContent = PAGE_CONFIG.instructionsText;
+document.getElementById("quizTitle").textContent = PAGE_CONFIG.pageTitle;
+document.getElementById("savePdfBtn").textContent = PAGE_CONFIG.pdfButtonText;
+document.getElementById("siteFooter").textContent = PAGE_CONFIG.footerText;
+
+/* ---------------------------------------------------------
+   QUIZ STATE
+   --------------------------------------------------------- */
+let uploadCompleted = false;
+
+/* ---------------------------------------------------------
+   MARK AS COMPLETE CONFIG
+   IMPORTANT:
+   Mark as Complete is enabled only after successful upload
+   --------------------------------------------------------- */
+window.MARK_COMPLETE_CONFIG = {
+  webAppUrl: PAGE_CONFIG.webAppUrl,
+  exerciseCode: PAGE_CONFIG.exerciseCode,
+  inputId: "studentCode",
+  buttonId: "markCompleteBtn",
+  messageId: "message",
+  notReadyText: "Please upload your PDF copy first.",
+  isReady: function () {
+    return uploadCompleted;
+  }
+};
+
+/* ---------------------------------------------------------
+   QUIZ INITIALISATION
+   --------------------------------------------------------- */
+TonioQuiz.initMainQuiz({
+  formId: "quiz",
+  containerId: "quizContainer",
+  scoreBoxId: "scoreBox",
+  resetBtnId: "resetBtnTop",
+  questions: QUESTIONS,
+  extraInstructionBeforeQuestionId: EXTRA_BOX.enabled ? EXTRA_BOX.beforeQuestionId : null,
+  extraInstructionHtml: EXTRA_BOX.enabled ? EXTRA_BOX.html : "",
+  onStateChange: function () {
+    TonioMarkComplete.updateButtonState(true);
+  },
+  onReset: function () {
+    TonioMarkComplete.updateButtonState(true);
+  }
+});
+
+TonioMarkComplete.initMarkComplete();
+TonioMarkComplete.updateButtonState(true);
+
+/* ---------------------------------------------------------
+   PDF EXPORT
+   IMPORTANT:
+   The exported PDF file name is based mainly on pageTitle
+   --------------------------------------------------------- */
+TonioPdfExport.initQuizPdfExport({
+  buttonId: "savePdfBtn",
+  quizSelector: "#quiz",
+  scoreSelector: "#scoreBox",
+  fallbackName: PAGE_CONFIG.pdfFallbackName,
+  includeSubtitleInFileName: true
+});
+
+/* ---------------------------------------------------------
+   UPLOAD QUIZ PDF
+   This uploads the student's saved PDF copy to Google Drive
+   --------------------------------------------------------- */
+const studentNameInput = document.getElementById("studentName");
+const quizPdfFileInput = document.getElementById("quizPdfFile");
+const uploadQuizBtn = document.getElementById("uploadQuizBtn");
+const uploadMessage = document.getElementById("uploadMessage");
+
+function setUploadMessage(text, colour) {
+  uploadMessage.textContent = text;
+  uploadMessage.style.color = colour || "#0b3c6f";
+}
+
+function fileToBase64(file) {
+  return new Promise(function (resolve, reject) {
+    const reader = new FileReader();
+
+    reader.onload = function () {
+      const result = reader.result || "";
+      const base64 = String(result).split(",")[1] || "";
+      resolve(base64);
+    };
+
+    reader.onerror = function () {
+      reject(new Error("Could not read the file."));
+    };
+
+    reader.readAsDataURL(file);
+  });
+}
+
+async function uploadQuizPdf() {
+  const studentName = (studentNameInput.value || "").trim();
+  const file = quizPdfFileInput.files[0];
+
+  if (!studentName) {
+    setUploadMessage("Please enter your full name.", "#b00020");
+    return;
+  }
+
+  if (!file) {
+    setUploadMessage("Please choose the PDF file you downloaded.", "#b00020");
+    return;
+  }
+
+  const fileNameLower = (file.name || "").toLowerCase();
+  if (!fileNameLower.endsWith(".pdf")) {
+    setUploadMessage("Only PDF files are allowed.", "#b00020");
+    return;
+  }
+
+  const maxBytes = PAGE_CONFIG.uploadMaxFileSizeMB * 1024 * 1024;
+  if (file.size > maxBytes) {
+    setUploadMessage("The file is too large. Maximum size is " + PAGE_CONFIG.uploadMaxFileSizeMB + " MB.", "#b00020");
+    return;
+  }
+
+  uploadQuizBtn.disabled = true;
+  uploadQuizBtn.textContent = "Uploading...";
+  setUploadMessage("Uploading your PDF...", "#0b3c6f");
+
+  try {
+    const base64Data = await fileToBase64(file);
+
+    /* Build a cleaner file name for Drive */
+    const safeStudentName = studentName.replace(/[^\w\s-]/g, "").trim().replace(/\s+/g, "_");
+    const finalFileName = safeStudentName + "_" + PAGE_CONFIG.uploadAssignment + ".pdf";
+
+    const response = await fetch(PAGE_CONFIG.uploadWebAppUrl, {
+      method: "POST",
+      body: JSON.stringify({
+        folderId: PAGE_CONFIG.uploadFolderId,
+        studentName: studentName,
+        fileName: finalFileName,
+        mimeType: "application/pdf",
+        base64Data: base64Data,
+        assignment: PAGE_CONFIG.uploadAssignment
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error("Upload failed. Please try again.");
+    }
+
+    const result = await response.json();
+
+    if (result && result.success) {
+      uploadCompleted = true;
+      setUploadMessage("PDF uploaded successfully. You may now mark this quiz as complete.", "#0b7a3d");
+      TonioMarkComplete.updateButtonState(true);
+    } else {
+      throw new Error((result && result.message) ? result.message : "Upload failed.");
+    }
+  } catch (error) {
+    uploadCompleted = false;
+    setUploadMessage(error.message || "Upload failed.", "#b00020");
+    TonioMarkComplete.updateButtonState(true);
+  } finally {
+    uploadQuizBtn.disabled = false;
+    uploadQuizBtn.textContent = "Upload PDF copy";
+  }
+}
+
+uploadQuizBtn.addEventListener("click", uploadQuizPdf);
+</script>
+
+<!-- =========================================================
+     SHARED MENU / HEADER LOADER
+     This file loads menu.css and header.js automatically
+
+     IMPORTANT:
+     Do NOT add menu.css or header.js separately in this page
+     because site-loader.js handles them centrally
+
+     FUTURE USE:
+     When you change the menu, you normally update the version
+     INSIDE site-loader.js, not here
+
+     Leave ?v=1 as it is unless you change site-loader.js itself
+     ========================================================= -->
+<script src="https://toniopaceict.github.io/level4_css/js/site-loader.js?v=3"></script>
+
+</body>
+</html>
