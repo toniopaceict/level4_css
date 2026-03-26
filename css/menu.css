@@ -401,9 +401,17 @@ fieldset + fieldset{
   border-radius:10px;
   background:#f6f9ff;
   font-weight:600;
-  display:flex;
+  display:inline-flex;
   align-items:center;
   justify-content:center;
+  width:auto;
+  flex:0 0 auto;
+  white-space:nowrap;
+}
+
+.quiz-top-actions .tracker-score{
+  width:auto !important;
+  flex:0 0 auto !important;
 }
 
 /* Inputs and buttons */
