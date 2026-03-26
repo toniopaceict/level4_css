@@ -519,6 +519,7 @@ fieldset + fieldset{
   align-items:center;
   gap:14px;
   padding:0 0 10px;
+  flex-wrap:nowrap;
 }
 
 .quiz-title{
@@ -534,9 +535,10 @@ fieldset + fieldset{
   display:flex;
   align-items:center;
   gap:10px;
-  margin-left:auto;
+  margin-left:auto;        /* pushes to right */
+  justify-content:flex-end;/* aligns content inside */
   flex:0 0 auto;
-  flex-wrap:nowrap;
+  white-space:nowrap;
 }
 
 .results-helper-text{
@@ -873,13 +875,23 @@ fieldset + fieldset{
 
   .tracker-row,
   .password-row,
-  .quiz-top-actions,
-  .quiz-topbar-inner,
   .results-upload-row{
     flex-direction:column;
     align-items:stretch;
   }
 
+  .quiz-topbar-inner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .quiz-top-actions{
+    width:100%;
+    justify-content:flex-end;
+  }
+
+
+  
   .top-actions{
     justify-content:stretch;
   }
