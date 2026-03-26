@@ -5,7 +5,7 @@
      or header.js, so students get the new menu
      with a normal browser refresh.
      ======================================================= */
-  const MENU_VERSION = "7";
+  const MENU_VERSION = "1";
 
   /* =======================================================
      LOAD SHARED MENU CSS
