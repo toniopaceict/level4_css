@@ -33,7 +33,7 @@ const PAGE_CONFIG = {
 
   /* Upload settings
      IMPORTANT:
-     Replace these with the upload web app and folder for this quiz */
+     Replace these with the correct upload web app and folder */
   uploadWebAppUrl: "https://script.google.com/macros/s/AKfycbxD9MGrzk67wuXE35bRURli6AMK1XbCVkgQUpkCdxkKhRQASI1YxXiypr993AGeWhH9OA/exec",
   uploadFolderId: "1WlRegFcshnHYjyPmF09lAxkWLs6NsY8V",
   uploadAssignment: "Excel_Financial_Functions_Quiz_Part_2",
@@ -123,21 +123,48 @@ const EXTRA_BOX = {
     display:none;
   }
 
-  .upload-row{
+  .results-upload-note{
+    margin:16px 0 12px;
+  }
+
+  .results-upload-row{
     display:flex;
     gap:12px;
     flex-wrap:wrap;
     align-items:center;
+    margin-top:10px;
+  }
+
+  /* narrower name box */
+  .upload-name-input{
+    flex:0 0 220px;
+    width:220px;
+    min-width:180px;
+  }
+
+  .upload-file-input{
+    flex:1 1 340px;
+    min-width:240px;
+  }
+
+  .upload-inline-btn{
+    flex:0 0 auto;
+    white-space:nowrap;
+  }
+
+  .upload-status{
     margin-top:12px;
+    font-weight:600;
+    text-align:center;
   }
 
-  .upload-row .tracker-input{
-    flex:1 1 260px;
-    min-width:220px;
-  }
-
-  .upload-note{
-    margin:0 0 12px;
+  @media (max-width: 768px){
+    .upload-name-input,
+    .upload-file-input,
+    .upload-inline-btn{
+      flex:1 1 100%;
+      width:100%;
+    }
   }
 </style>
 </head>
@@ -190,46 +217,33 @@ const EXTRA_BOX = {
           </div>
         </div>
       </div>
-    </fieldset>
 
-    <!-- =========================================================
-         UPLOAD QUIZ PDF
-         Students first download the PDF, then upload that PDF here
-         ========================================================= -->
-    <fieldset class="tracker-box no-print">
-      <legend>Upload Quiz PDF</legend>
-
-      <p class="q upload-note">
-        First click <strong>Download PDF</strong> above and save the file on your device.
-        Then upload that same PDF here.
+      <p class="q results-upload-note">
+        First click <strong>Download PDF</strong> above and save the file on your device. Then upload that same PDF here.
       </p>
 
-      <div class="upload-row">
-        <!-- Student name required for the uploaded file name -->
+      <div class="results-upload-row">
         <input
           type="text"
           id="studentName"
-          class="tracker-input"
+          class="tracker-input upload-name-input"
           placeholder="Enter your full name">
 
-        <!-- Only PDF allowed -->
         <input
           type="file"
           id="quizPdfFile"
-          class="tracker-input"
+          class="tracker-input upload-file-input"
           accept=".pdf,application/pdf">
-      </div>
 
-      <div class="upload-row">
         <button
           id="uploadQuizBtn"
           type="button"
-          class="tracker-btn">
+          class="tracker-btn upload-inline-btn">
           Upload PDF copy
         </button>
       </div>
 
-      <p id="uploadMessage" class="tracker-message"></p>
+      <p id="uploadMessage" class="tracker-message upload-status"></p>
     </fieldset>
 
     <fieldset class="tracker-box no-print">
@@ -410,7 +424,7 @@ async function uploadQuizPdf() {
   try {
     const base64Data = await fileToBase64(file);
 
-    /* Build a cleaner file name for Drive */
+    /* Cleaner file name for Google Drive */
     const safeStudentName = studentName.replace(/[^\w\s-]/g, "").trim().replace(/\s+/g, "_");
     const finalFileName = safeStudentName + "_" + PAGE_CONFIG.uploadAssignment + ".pdf";
 
@@ -454,17 +468,7 @@ uploadQuizBtn.addEventListener("click", uploadQuizPdf);
 
 <!-- =========================================================
      SHARED MENU / HEADER LOADER
-     This file loads menu.css and header.js automatically
-
-     IMPORTANT:
-     Do NOT add menu.css or header.js separately in this page
-     because site-loader.js handles them centrally
-
-     FUTURE USE:
-     When you change the menu, you normally update the version
-     INSIDE site-loader.js, not here
-
-     Leave ?v=1 as it is unless you change site-loader.js itself
+     site-loader.js loads the menu centrally
      ========================================================= -->
 <script src="https://toniopaceict.github.io/level4_css/js/site-loader.js?v=3"></script>
 
