@@ -204,48 +204,53 @@ const EXTRA_BOX = {
       <div id="quizContainer"></div>
     </form>
 
-    <fieldset class="tracker-box no-print">
-      <legend>Results & Export</legend>
+<fieldset class="tracker-box no-print">
+  <legend>Results & Export</legend>
 
-<div class="quiz-topbar">
-<div class="quiz-topbar-inner">
+  <div class="results-header-row">
+    <p class="quiz-title" id="quizTitle"></p>
 
-          <p class="quiz-title" id="quizTitle"></p>
+    <div class="results-header-actions">
+      <p class="tracker-score" id="scoreBox" aria-live="polite">Score: 0 / 0 (0%)</p>
+      <button type="button" class="tracker-btn" id="savePdfBtn">Download PDF</button>
+    </div>
+  </div>
 
-          <div class="quiz-top-actions">
-            <p class="tracker-score" id="scoreBox" aria-live="polite">Score: 0 / 0 (0%)</p>
-            <button type="button" class="tracker-btn" id="savePdfBtn">Download PDF</button>
-          </div>
-</div>
-</div>
+  <p class="results-helper-text">
+    Download your PDF first, then upload the same file below.
+  </p>
 
-      <p class="q results-upload-note">
-        First click <strong>Download PDF</strong> above and save the file on your device. Then upload that same PDF here.
-      </p>
+  <div class="results-upload-row">
+    <input
+      type="text"
+      id="studentName"
+      class="tracker-input upload-name-input"
+      placeholder="Your full name">
 
-      <div class="results-upload-row">
-        <input
-          type="text"
-          id="studentName"
-          class="tracker-input upload-name-input"
-          placeholder="Enter your full name">
+    <input
+      type="file"
+      id="quizPdfFile"
+      class="tracker-input upload-file-input"
+      accept=".pdf,application/pdf">
 
-        <input
-          type="file"
-          id="quizPdfFile"
-          class="tracker-input upload-file-input"
-          accept=".pdf,application/pdf">
+    <button
+      id="uploadQuizBtn"
+      type="button"
+      class="tracker-btn upload-inline-btn">
+      Upload PDF copy
+    </button>
+  </div>
 
-        <button
-          id="uploadQuizBtn"
-          type="button"
-          class="tracker-btn upload-inline-btn">
-          Upload PDF copy
-        </button>
-      </div>
+  <p id="uploadMessage" class="tracker-message upload-status"></p>
+</fieldset>
 
-      <p id="uploadMessage" class="tracker-message upload-status"></p>
-    </fieldset>
+
+     
+
+
+
+
+       
 
     <fieldset class="tracker-box no-print">
       <legend>Mark as Complete</legend>
